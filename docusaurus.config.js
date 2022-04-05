@@ -33,7 +33,7 @@ const config = {
         },
         blog: {
           showReadingTime: true,
-          editUrl: 'https://github.com/TECH7Fox/sip-hass-docs/tree/main/',
+          editUrl: 'https://github.com/TECH7Fox/sip-hass-docs/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -45,6 +45,16 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      /**
+      announcementBar: {
+        id: 'support_us',
+        content:
+          'We are looking to revamp our docs, please fill <a target="_blank" rel="noopener noreferrer" href="#">this survey</a>',
+        backgroundColor: '#fafbfc',
+        textColor: '#091E42',
+        isCloseable: false,
+      },
+      */
       navbar: {
         title: 'SIP-HASS',
         logo: {
@@ -54,9 +64,33 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'tutorial/introduction',
             position: 'left',
             label: 'Tutorial',
+          },
+          {
+            type: 'doc',
+            docId: 'add-on/settings',
+            position: 'left',
+            label: 'Add-on',
+          },
+          {
+            type: 'doc',
+            docId: 'card/introduction',
+            position: 'left',
+            label: 'Card',
+          },
+          {
+            type: 'doc',
+            docId: 'integration/introduction',
+            position: 'left',
+            label: 'Integration',
+          },
+          {
+            type: 'doc',
+            docId: 'developers/introduction',
+            position: 'left',
+            label: 'Developers',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
@@ -74,7 +108,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/intro',
+                to: '/docs/tutorial',
               },
             ],
           },
@@ -101,6 +135,10 @@ const config = {
               {
                 label: 'GitHub',
                 href: 'https://github.com/TECH7Fox/sip-hass-docs',
+              },
+              {
+                label: 'Become a sponsor',
+                href: 'https://github.com/sponsors/TECH7Fox',
               },
             ],
           },
