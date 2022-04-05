@@ -1,2 +1,2 @@
-# ha-sip-docs
+# sip-hass-docs
  Documentation for HA SIP
