@@ -16,6 +16,12 @@ const config = {
   organizationName: 'TECH7Fox',
   projectName: 'SIP-HASS',
 
+  plugins: [
+    [require.resolve("@easyops-cn/docusaurus-search-local"),
+      {hashed: true}
+    ],
+  ],
+
   presets: [
     [
       'classic',
@@ -23,12 +29,11 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/TECH7Fox/sip-hass-docs/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/TECH7Fox/sip-hass-docs/tree/main/',
         },
         blog: {
           showReadingTime: true,
-          editUrl:
-            'https://github.com/TECH7Fox/sip-hass-docs/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/TECH7Fox/sip-hass-docs/tree/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -78,11 +83,11 @@ const config = {
             items: [
               {
                 label: 'Home Asssitant forum',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                href: 'https://community.home-assistant.io/',
               },
               {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://discordapp.com/invite/qxnDtHbwuD',
               },
             ],
           },
