@@ -29,7 +29,7 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      description="Description will go into a meta tag in <head />">
+      description="SIP-HASS Docs">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
