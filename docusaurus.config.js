@@ -9,7 +9,7 @@ const config = {
   title: 'SIP-HASS',
   tagline: 'SIP for Home Assistant',
   url: 'https://sip-hass-docs.github.io',
-  baseUrl: '/',
+  baseUrl: '/sip-hass-docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',

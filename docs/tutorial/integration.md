@@ -25,3 +25,18 @@ import TabItem from '@theme/TabItem';
     Download the latest version, set it in <code>/custom_components/</code> and add it to resources.
   </TabItem>
 </Tabs>
+
+## Configuration
+
+When restarted, you can configure the integration.
+
+```yaml title="Integration options"
+host: localhost
+port: 8089
+username: admin
+password: my-password # The password you set in the add-on configuration
+```
+
+After a couple seconds, click on `devices` and you should see the server, and one or more **PJSIP devices**.
+
+That's it! Now you got sensors and services you can use for automations.
