@@ -6,19 +6,33 @@ sidebar_position: 3
 
 Now we have a PBX to connect to, we can install the card.
 
-## Install the Card
+## Installation
 
-Via HACS:
-...
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-## Use the Card
+<Tabs groupId="install-method">
+  <TabItem value="hacs" label="HACS" default>
+    Add the repo, and install it.
+  </TabItem>
+  <TabItem value="manual" label="Manual">
+    Download the latest version, set it in <code>/www/</code> and add it to resources.
+  </TabItem>
+</Tabs>
+
+## Configuration
 
 - In edit mode, click on add card
 - Search for **SIP Card**
 
 Now we need to configure it.
-Most things are configurable from the editor, except for the ICE settings.
-We recommend using the card editor for all other settings.
+
+:::tip
+
+Most things are configurable from the editor, except for the **ICE settings**.
+We recommend using the **card editor** for all other settings.
+
+:::
 
 ```yaml title="card configuration"
 type: 'custom:sipjs-card'

@@ -8,13 +8,14 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'SIP-HASS',
   tagline: 'SIP for Home Assistant',
-  url: 'https://sip-hass-docs.com',
+  url: 'https://sip-hass-docs.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'TECH7Fox',
-  projectName: 'SIP-HASS',
+  projectName: 'sip-hass-docs.github.io',
+  trailingSlash: false,
 
   plugins: [
     [require.resolve("@easyops-cn/docusaurus-search-local"),

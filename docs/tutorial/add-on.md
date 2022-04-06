@@ -4,11 +4,7 @@ sidebar_position: 2
 
 # Add-on
 
-Documents are **groups of pages** connected through:
-
-- a **sidebar**
-- **previous/next navigation**
-- **versioning**
+The Asterisk add-on is a PBX server that will handle the SIP devices and calls. It is made for the card and comes preconfigured.
 
 ## Add the Repository
 
@@ -20,7 +16,7 @@ First install the add-on repository.
 
 Now the add-on should show up under Asterisk. 
 
-## Install the Add-on
+## Installation
 
 Go to the Asterisk add-on, and click install. This can take around 1-3 minutes.
 

@@ -4,28 +4,24 @@ sidebar_position: 4
 
 # Integration
 
-Docusaurus is a **static-site-generator** (also called **[Jamstack](https://jamstack.org/)**).
+:::info
 
-It builds your site as simple **static HTML, JavaScript and CSS files**.
+The integration is optional, and is not required for the card or add-on.
 
-## Build your site
+:::
 
-Build your site **for production**:
+With the integration you can build automations with your SIP devices as triggers. And call services like `hangup` and `originate`.
 
-```bash
-npm run build
-```
+## Installation
 
-The static files are generated in the `build` folder.
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-## Deploy your site
-
-Test your production build locally:
-
-```bash
-npm run serve
-```
-
-The `build` folder is now served at `http://localhost:3000/`.
-
-You can now deploy the `build` folder **almost anywhere** easily, **for free** or very small cost (read the **[Deployment Guide](https://docusaurus.io/docs/deployment)**).
+<Tabs groupId="install-method">
+  <TabItem value="hacs" label="HACS" default>
+    Add the repo, and install it.
+  </TabItem>
+  <TabItem value="manual" label="Manual">
+    Download the latest version, set it in <code>/custom_components/</code> and add it to resources.
+  </TabItem>
+</Tabs>
