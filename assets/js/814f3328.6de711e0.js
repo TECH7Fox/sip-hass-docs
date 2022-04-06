@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksip_hass_docs=self.webpackChunksip_hass_docs||[]).push([[2535],{5641:function(s){s.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome","permalink":"/blog/welcome"}]}')}}]);

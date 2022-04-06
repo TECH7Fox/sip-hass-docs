@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksip_hass_docs=self.webpackChunksip_hass_docs||[]).push([[5791],{3592:function(e){e.exports=JSON.parse('{"name":"Frontend","permalink":"/docs/tags/frontend","docs":[{"id":"developers/card","title":"Card","description":"Hey, want to help development with the card? Awesome!","permalink":"/docs/developers/card"}],"allTagsPath":"/docs/tags"}')}}]);
