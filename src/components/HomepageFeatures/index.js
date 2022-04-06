@@ -24,7 +24,7 @@ const FeatureList = [
   },
   {
     title: 'Asterisk Integration',
-    image: './img/integration.png',
+    image: './img/integration2.png',
     description: (
       <>
         Connects to the <b>AMI</b> and creates devices for the server and every SIP contact.
