@@ -1,5 +1,21 @@
 ---
 sidebar_position: 4
+title: Integration
+tags:
+    - component
+    - Asterisk
 ---
 
-# Integration
+Here is everything you should know to help development with the integration.
+
+Thank you very much for your help!
+
+## About
+
+The Asterisk integration is a custom component that connect's to the **AMI** (Asterisk Manager Interface) to get the status of the server and SIP endpoints and makes sensors for it.
+
+The integration also has some services, like the `hangup` and `originate` service.
+
+## How to Test
+
+There isn't a easy way to test the integration. You have to copy it to your `custom_components` folder and try it out.

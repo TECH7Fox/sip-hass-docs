@@ -1,0 +1,41 @@
+---
+sidebar_position: 1
+tags:
+    - Video
+title: Video Between Cards
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+When you enable video, the card sends your webcam feed and receives a video feed. This allows for low-latency live video between the cards or SIP devices.
+
+## Requirements
+
+For this guide you will need the following:
+
+- Working PBX
+- Card installed and configured
+- Webcam that works in your browser
+- Browser that supports the received codec
+
+## How to use
+
+First, enable make sure <b>video support</b> is enabled in your PBX.
+
+<Tabs groupId="pbx">
+  <TabItem value="addon" label="Add-on" default>
+    For the add-on, simply turn on <code>video_support</code> and restart.
+  </TabItem>
+  <TabItem value="custom" label="Custom PBX">
+    If you have a custom PBX, add <code>video_support=on</code> to your <b>SIP</b> endpoint. If you have something like <b>FreePBX</b>, turn on the <b>video support</b> option.
+  </TabItem>
+</Tabs>
+
+Then turn on the `video` option in the card.
+
+And that's it. If everything is correct, you should now eachother the webcam when you call another card.
+
+## Troubleshooting
+
+If you are having problems, try it other browsers. Also make sure you have the <a href="#requirements">requirements</a>.

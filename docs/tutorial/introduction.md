@@ -6,7 +6,7 @@ sidebar_position: 1
 
 In this tutorial we will setup the card, add-on and integration and connect everything together.
 
-### What you'll need
+## What you'll need
 
 For the entire SIP-HASS system you'll need:
 

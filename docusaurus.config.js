@@ -45,16 +45,13 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      /**
       announcementBar: {
         id: 'support_us',
-        content:
-          'We are looking to revamp our docs, please fill <a target="_blank" rel="noopener noreferrer" href="#">this survey</a>',
-        backgroundColor: '#fafbfc',
-        textColor: '#091E42',
-        isCloseable: false,
+        content: 'If you like SIP-HASS, please give it a ⭐️ on <a target="_blank" rel="noopener noreferrer" href="https://github.com/TECH7Fox/sip-hass-card">GitHub</a> and consider <a target="_blank" rel="noopener noreferrer" href="https://github.com/sponsors/TECH7Fox">sponsoring</a>.',
+        backgroundColor: 'dodgerblue',
+        textColor: 'white',
+        isCloseable: true,
       },
-      */
       navbar: {
         title: 'SIP-HASS',
         logo: {
@@ -70,7 +67,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'add-on/settings',
+            docId: 'add-on/introduction',
             position: 'left',
             label: 'Add-on',
           },
@@ -113,6 +110,23 @@ const config = {
             ],
           },
           {
+            title: 'Issues',
+            items: [
+              {
+                label: 'Add-on',
+                href: 'https://github.com/TECH7Fox/asterisk-hass-addons/issues',
+              },
+              {
+                label: 'Card',
+                href: 'https://github.com/TECH7Fox/sip-hass-card/issues',
+              },
+              {
+                label: 'Integration',
+                href: 'https://github.com/TECH7Fox/asterisk-hass-integration/issues',
+              },
+            ],
+          },
+          {
             title: 'Community',
             items: [
               {
@@ -146,6 +160,7 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Jordy Kuhne`,
       },
       prism: {
+        additionalLanguages: ['editorconfig'],
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
