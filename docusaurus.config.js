@@ -30,7 +30,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/TECH7Fox/sip-hass-docs/tree/main/',
+          editUrl: 'https://github.com/TECH7Fox/sip-hass-docs/edit/main/',
         },
         blog: {
           showReadingTime: true,

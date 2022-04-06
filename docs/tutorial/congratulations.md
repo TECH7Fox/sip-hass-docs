@@ -10,4 +10,4 @@ Anything **unclear** or **buggy** in this tutorial? [Please report it!](https://
 
 ## What's next?
 
-- Add a doorbell [Doorbell](../add-on/guides/doorbell)
+- Add a [Doorbell](../add-on/guides/doorbell).
