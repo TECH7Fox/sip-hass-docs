@@ -15,7 +15,7 @@ const FeatureList = [
   },
   {
     title: 'SIP Card',
-    image: './img/asterisk_logo.png',
+    image: './img/card.png',
     description: (
       <>
         The SIP Card allows you to call other dashboards and SIP devices like doorbells, from a Home Assistant dashboard.
@@ -24,7 +24,7 @@ const FeatureList = [
   },
   {
     title: 'Asterisk Integration',
-    image: './img/asterisk_logo.png',
+    image: './img/integration.png',
     description: (
       <>
         Connects to the <b>AMI</b> and creates devices for the server and every SIP contact.
