@@ -89,11 +89,16 @@ const config = {
             position: 'left',
             label: 'Developers',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            to: '/blog',
+            label: 'Blog',
+            position: 'right'
+          },
           {
             href: 'https://github.com/TECH7Fox/sip-hass-docs',
-            label: 'GitHub',
             position: 'right',
+            className: 'header-github-link',
+            'aria-label': 'Github repository',
           },
         ],
       },
@@ -105,7 +110,40 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/tutorial',
+                to: '/docs/tutorial/introduction',
+              },
+              {
+                label: 'Add-on',
+                to: '/docs/add-on/introduction',
+              },
+              {
+                label: 'Card',
+                to: '/docs/card/introduction',
+              },
+              {
+                label: 'Integration',
+                to: '/docs/integration/introduction',
+              },
+            ],
+          },
+          {
+            title: 'Developers',
+            items: [
+              {
+                label: 'Add-on',
+                to: '/docs/developers/add-on'
+              },
+              {
+                label: 'Card',
+                to: '/docs/developers/card'
+              },
+              {
+                label: 'Integration',
+                to: '/docs/developers/integration'
+              },
+              {
+                label: 'Docs',
+                to: '/docs/developers/docs'
               },
             ],
           },
@@ -123,6 +161,10 @@ const config = {
               {
                 label: 'Integration',
                 href: 'https://github.com/TECH7Fox/asterisk-hass-integration/issues',
+              },
+              {
+                label: 'Docs',
+                href: 'https://github.com/TECH7Fox/sip-hass-docs/issues',
               },
             ],
           },
