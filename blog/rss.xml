@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>SIP-HASS Blog</title>
-        <link>https://sip-hass-docs.github.io/blog</link>
+        <link>https://sip-hass-docs.github.io/sip-hass-docs/blog</link>
         <description>SIP-HASS Blog</description>
         <lastBuildDate>Tue, 05 Apr 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,7 +10,7 @@
         <language>en</language>
         <item>
             <title><![CDATA[Welcome]]></title>
-            <link>https://sip-hass-docs.github.io/blog/welcome</link>
+            <link>https://sip-hass-docs.github.io/sip-hass-docs/blog/welcome</link>
             <guid>welcome</guid>
             <pubDate>Tue, 05 Apr 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Welcome to the SIP-HASS docs!]]></description>
