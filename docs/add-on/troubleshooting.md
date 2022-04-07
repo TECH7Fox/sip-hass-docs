@@ -7,8 +7,6 @@ tags:
     - Asterisk
 ---
 
-
-
 ## Accessing Asterisk CLI
 
 You can access the Asterisk CLI to debug.
