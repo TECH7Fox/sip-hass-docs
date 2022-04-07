@@ -47,7 +47,7 @@ We recommend using the **card editor** for all other settings.
 
 ```yaml title="card configuration"
 type: 'custom:sipjs-card'
-server: 'your-ip'                           # Set your HA IP here!
+server: 'your-local-ip'                     # Set your local HA IP here!
 port: '8089'                                # WSS default is 8089.
 video: false                                # Send and receive video. Can require extra configuration.
 auto_answer: false                          # Auto-answer when called.
@@ -73,3 +73,43 @@ extensions:                                 # Set here the WSS extensions you ca
     entity: binary_sensor.sensor1
     camera: ''
 ```
+
+Now you might get a `9006` error. That's because the certificate doesn't match the domain. (in this case the server option)
+
+So now we need to fix **SSL**.
+
+## SSL
+
+**WSS** requires **SSL** for security reason. The add-on set's up Asterisk's part of that, but you still need to setup your network to work with it.
+
+### Manual
+
+You can temporary accept the certificate manually by going to `https://<YOUR-HA-ADDRESS>:8089/ws`, click continue and accept. You should see `Upgrade Required`.
+
+Now your browser accepts this certificate, even if the domain doesn't match.
+
+:::warning
+
+Warning! This only works for a couple days max. When the certificate changes you have to do this again.
+
+**This is not a permanent solution!**
+
+:::
+
+### Port Forwarding
+
+Best way is to port forward `8089`. Then you can set the `server` option to your domain. But then you also need to forward the **RTP ports**, which is by default `10000-20000`.
+
+:::caution
+
+If you do this, make sure you have **secure passwords** for your extensions! Bot's may try to brute-force it.
+
+If that happens often, you could set `8089` to another non-standard port.
+
+:::
+
+### DNS Rewrite
+
+It's possible to set a **DNS rewrite** in your router, so your certificate domain points towards your **local IP**. This way you don't have to port forward anything, but this only works locally.
+
+You can find more info <a href="../add-on/guides/dns_rewrite">here</a>.
