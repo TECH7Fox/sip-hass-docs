@@ -33,13 +33,13 @@ exten => 123,n,agi(googletts.agi,"${TEXT}",en) ; Execute the googletts agi scrip
 ```yaml title="Service"
 service: asterisk.originate
 data:
-    channel: PJSIP/100            # The device it will call
-    context: speech               # The context we created in the dialplan
-    exten: '123'                  # The extension inside that context
-    priority: '1'                 # Priority of the call
-    caller_id: 'Home Assistant'   # The callerID it calls as
-    timeout: 60                   # Time until giving up
-    variables: TEXT: Hello world! # Variables that you can use in the dialplan
+  channel: PJSIP/100            # The device it will call
+  context: speech               # The context we created in the dialplan
+  exten: '123'                  # The extension inside that context
+  priority: '1'                 # Priority of the call
+  caller_id: 'Home Assistant'   # The callerID it calls as
+  timeout: 60                   # Time until giving up
+  variables: TEXT: Hello world! # Variables that you can use in the dialplan
     
 ```
 ## Example: Get a call if doors or windows are still open or if lights are still on when you leave the house
