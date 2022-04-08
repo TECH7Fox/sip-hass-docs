@@ -42,3 +42,17 @@ data:
     variables: TEXT: Hello world! # Variables that you can use in the dialplan
     
 ```
+
+## Emaple open Windows / Doors
+
+```yaml service: asterisk.originate
+data:
+  channel: SIP/8002
+  context: speech
+  exten: '123'
+  priority: '1'
+  caller_id: Home Assistant
+  timeout: 60
+  variables:
+    TEXT: "Attention. The following doors or windows are still open:  {{ dict((states|selectattr('entity_id', 'in', state_attr('group.windows_doors', 'entity_id'))|list)|groupby('state'))['on']|map(attribute='name')|list|join(', ') }}" 
+```
