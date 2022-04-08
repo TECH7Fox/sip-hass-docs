@@ -33,7 +33,7 @@ exten => 123,n,agi(googletts.agi,"${TEXT}",en) ; Execute the googletts agi scrip
 ```yaml title="Service"
 service: asterisk.originate
 data:
-    channel: PJSIP/100            # The device it will call
+    channel: PJSIP/100            # The device it will call (either PJSIP or SIP --> depends how your device [extension] has been created) PJSIP for pjsip                                     extension / SIP for chan_sip extensions
     context: speech               # The context we created in the dialplan
     exten: '123'                  # The extension inside that context
     priority: '1'                 # Priority of the call
