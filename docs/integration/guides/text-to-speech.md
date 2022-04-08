@@ -47,7 +47,7 @@ data:
 For this to work you simply have to #create a group with all window and doo sensors in your house.
 
 
-``ỳaml service: asterisk.originate
+```ỳaml service: asterisk.originate
 data:
   channel: SIP/8002
   context: speech
