@@ -49,12 +49,12 @@ For this to work you simply have to create a group with all window and door / li
 Add to `extensions.conf` (HassIO-Addon) / or `extensions_custom.conf` (FreePBX)
 
 ```
-[home-assistant-lights]                               ; The context
-exten => 123,1,Answer()                        ; Answer the call
+[home-assistant-lights]                          ; The context
+exten => 123,1,Answer()                          ; Answer the call
 exten => 123,n,agi(googletts.agi,"${LIGHTS}",en) ; Execute the googletts agi script with the LIGHTS variable
 
-[home-assistant-windows-doors]                               ; The context
-exten => 123,1,Answer()                        ; Answer the call
+[home-assistant-windows-doors]                       ; The context
+exten => 123,1,Answer()                              ; Answer the call
 exten => 123,n,agi(googletts.agi,"${WINDOWDOOR}",en) ; Execute the googletts agi script with the WINDOWDOOR variable
 
 ```
