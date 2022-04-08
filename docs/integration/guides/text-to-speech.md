@@ -75,10 +75,10 @@ data:
 
 # Full automation Example:
 
-```
 
 ## Lights still turned on
 
+```
 - alias: sip - call if lights still on
   trigger:
     platform: state
@@ -102,8 +102,10 @@ data:
         variables:
           LIGHTS: "Attention. The following lights are still on:  {{ dict((states|selectattr('entity_id', 'in', state_attr('group.lights_house', 'entity_id'))|list)|groupby('state'))['on']|map(attribute='name')|list|join(' ...... ') }}" 
 
+```
 ## Open Windows and doors
-  
+ 
+``` 
 - alias: sip - call if door or window is open
   trigger:
     platform: state
