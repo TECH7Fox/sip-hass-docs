@@ -63,13 +63,13 @@ After you can make service calls like this:
 ```ỳaml service: asterisk.originate
 data:
   channel: SIP/8002
-  context: speech
+  context: home-assistant-windows-doors
   exten: '123'
   priority: '1'
   caller_id: Home Assistant
   timeout: 60
   variables:
-    TEXT: "Attention. The following doors or windows are still open:  {{ dict((states|selectattr('entity_id', 'in', state_attr('group.windows_doors', 'entity_id'))|list)|groupby('state'))['on']|map(attribute='name')|list|join('.......... ') }}" 
+    WINDOWDOOR: "Attention. The following doors or windows are still open:  {{ dict((states|selectattr('entity_id', 'in', state_attr('group.windows_doors', 'entity_id'))|list)|groupby('state'))['on']|map(attribute='name')|list|join('.......... ') }}" 
 
 ```
 
