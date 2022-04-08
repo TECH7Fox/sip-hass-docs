@@ -18,7 +18,7 @@ For this guide you will need the following:
     - If your not using the add-on, you can install it <a href="https://zaf.github.io/asterisk-googletts">here</a>.
 - Asterisk integration installed
 
-## Dialplan (FreepBX [`extensions_custom.conf`] / HassIO-Addon [ `extensions.conf`])
+## Dialplan (FreePBX [`extensions_custom.conf`] / HassIO-Addon [ `extensions.conf`])
 
 First, let's make a dialplan extension.
 
