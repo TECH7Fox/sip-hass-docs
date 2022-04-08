@@ -46,7 +46,7 @@ data:
 
 For this to work you simply have to create a group with all window and door / lights entities in your house.
 
-Add to `extension.conf` (HassIO-Addon) / or `extenstions_custom.conf` (FreePBX)
+Add to `extensions.conf` (HassIO-Addon) / or `extensions_custom.conf` (FreePBX)
 
 ```
 [home-assistant-lights]                               ; The context
