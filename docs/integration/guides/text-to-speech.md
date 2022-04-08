@@ -44,6 +44,9 @@ data:
 ```
 ## Example: Get a call if doors or windows are still open when you leave the house
 
+For this to work you simply have to #create a group with all window and doo sensors in your house.
+
+
 ``ỳaml service: asterisk.originate
 data:
   channel: SIP/8002
