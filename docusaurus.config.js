@@ -91,6 +91,12 @@ const config = {
             label: 'Developers',
           },
           {
+            type: 'doc',
+            docId: 'showcase/introduction',
+            position: 'left',
+            label: 'Showcase',
+          },
+          {
             to: '/blog',
             label: 'Blog',
             position: 'right'
