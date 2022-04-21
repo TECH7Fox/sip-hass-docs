@@ -84,4 +84,16 @@ The port for **WSS**.
 ### Option: `video`
 Enables video. Will send the webcam feed and display incoming video.
 
+### Option: `extensions`
+The extension objects the card can register as based on the current user.
+
+#### Option: `camera`
+Use a camera entity for video.
+
+:::caution
+
+The default camera entities have a delay. You can use [RTSP-to-webRTC](https://www.home-assistant.io/integrations/rtsp_to_webrtc/) to get a low-latency video feed.
+
+:::
+
 ### WIP
