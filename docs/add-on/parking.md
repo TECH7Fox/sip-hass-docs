@@ -12,7 +12,7 @@ This is very usefull for **doorbells**, so you have time to load the card and re
 
 ## Usage
 
-Simply use it by calling `777` to park, and `888` to pickup a parked call.
+Simply use it by calling `444` to park, and `555` to pickup a parked call.
 
 ## Customize
 
@@ -34,8 +34,8 @@ And the default dialplan includes:
 
 ```editorconfig title="extensions.conf"
 ; this extension parks the call.
-exten => 777,1,Park(,s)
+exten => 444,1,Park(,s)
 
 ; this extension get's the first parked call. 701 is the parking position.
-exten => 888,1,ParkedCall(default,701)
+exten => 555,1,ParkedCall(default,701)
 ```

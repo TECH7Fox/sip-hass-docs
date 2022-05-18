@@ -42,7 +42,7 @@ When restarted, you can configure the integration.
 
 ```yaml title="Integration options"
 host: localhost
-port: 8089
+port: 5038
 username: admin
 password: my-password # The password you set in the add-on configuration
 ```
