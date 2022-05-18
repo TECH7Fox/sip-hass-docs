@@ -76,7 +76,7 @@ This only works if the device your calling is registered.
 With parking, the doorbell parks itself and wait for the other to retrieve the call.
 The add-on includes a parking extension by default, so you only need to point to it.
 
-Simply use it by calling `777` to park, and `888` to pickup a parked call.
+Simply use it by calling `444` to park, and `555` to pickup a parked call.
 
 You can find more info about parking <a href="../parking/">here</a>.
 
