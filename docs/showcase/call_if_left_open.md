@@ -9,16 +9,15 @@ This example makes a call when you leave a window or door open, or leave lights 
 For this to work you simply have to create a group with all window and door / lights entities in your house.
 Then, add a **TSS** extension to `extensions.conf` (HassIO-Addon) / or `extensions_custom.conf` (FreePBX)
 
-```
+```editorconfig title="extensions.conf"
 [tts]                                          ; The context
 exten => 123,1,Answer()                        ; Answer the call
 exten => 123,n,agi(googletts.agi,"${TEXT}",en) ; Execute the googletts agi script with the TEXT variable
-
 ```
 
 After that, you can make service calls like this:
 
-```yaml service: asterisk.originate
+```yaml title="Service: asterisk.originate"
 data:
   channel: SIP/8002
   context: tts
@@ -28,12 +27,11 @@ data:
   timeout: 60
   variables:
     TEXT: "Attention. The following doors or windows are still open:  {{ dict((states|selectattr('entity_id', 'in', state_attr('group.windows_doors', 'entity_id'))|list)|groupby('state'))['on']|map(attribute='name')|list|join('.......... ') }}" 
-
 ```
 
 # Full Automation Example
 
-```
+```yaml title="Automation"
 - alias: sip - call if lights still on
   trigger:
     platform: state
@@ -56,5 +54,4 @@ data:
         timeout: 60
         variables:
           TEXT: "Attention. The following lights are still on:  {{ dict((states|selectattr('entity_id', 'in', state_attr('group.lights_house', 'entity_id'))|list)|groupby('state'))['on']|map(attribute='name')|list|join(' ...... ') }}" 
-
 ```
