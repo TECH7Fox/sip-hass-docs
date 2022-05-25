@@ -21,3 +21,8 @@ The browser can't find your microphone or camera if you enabled video. Make sure
 
 ### Requested device not available in secure envirement
 Either the browser can't find your microphone or camera, or you haven't setup SSL properly.
+
+### Cannot reach properties of undefined (reading 'foreach')
+The card tries to loop trough a array that doesn't exist. If you don't use a option like `custom`, `dtmfs` or `buttons` make sure you still configure it.
+
+Example for buttons: `buttons: []`
