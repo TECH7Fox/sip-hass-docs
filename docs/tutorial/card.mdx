@@ -72,7 +72,17 @@ extensions:                                 # Set here the WSS extensions you ca
     icon: mdi:monitor
     entity: binary_sensor.sensor1
     camera: ''
+custom: []
+dtmfs: []
+buttons: []
 ```
+
+:::caution
+
+If you don't use some arrays like `custom`, `dtmfs` or `buttons`, make sure to include the empty arrays as shown in the example above.
+Otherwise you will get a `foreach` error.
+
+:::
 
 Now you might get a `9006` error. That's because the certificate doesn't match the domain. (in this case the server option)
 
