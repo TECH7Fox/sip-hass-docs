@@ -11,6 +11,6 @@ Add `?auto_call=<number>` to your **URL**.
 
 Example: 
 ```
-https://my-ha.duckdns.org/phone-lovelace?auto_call=888
+https://my-ha.duckdns.org/phone-lovelace?auto_call=555
 ```
-This will call `888` when the card registers. In the add-on, `888` is preconfigured to pickup a parked call.  
+This will call `555` when the card registers. In the add-on, `555` is preconfigured to pickup a parked call.  
