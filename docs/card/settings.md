@@ -19,6 +19,7 @@ We recommend using the **card editor** for all other settings.
 type: custom:sipjs-card
 server: 192.168.0.10
 port: '8089'
+prefix: ''
 video: false
 ringtone: /local/asterisk/ringtone.mp3
 button_size: '62'
