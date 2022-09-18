@@ -25,6 +25,9 @@ First, create a extension for your device in `pjsip_custom.conf`.
 [8000]
 type = endpoint
 context = default
+disallow = all
+allow = alaw,ulaw          ; Audio codecs
+allow=h264                 ; Video codecs
 direct_media_method=invite
 dtmf_mode=info
 callerid="Doorbell" <8000>
@@ -39,9 +42,15 @@ max_contacts = 1
 [auth8000]
 type=auth
 auth_type=userpass
-password=mypassword         ; Set your password here
+password=mypassword        ; Set your password here
 username=8000
 ```
+
+:::caution
+
+Depending on your devices, you might want to change the codecs.
+
+:::
 
 Restart the add-on, and check the logs if the doorbell registers.
 
