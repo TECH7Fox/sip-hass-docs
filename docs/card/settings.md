@@ -62,6 +62,9 @@ buttons:
     entity: switch.garagedoor
 custom_title: ''
 hide_me: true
+backup_name: Tablet
+backup_extension: '200'
+backup_secret: 1234
 iceTimeout: 3 # Default is 5 seconds
 iceConfig: # Remove if you don't want to use ICE
   iceCandidatePoolSize: 0
