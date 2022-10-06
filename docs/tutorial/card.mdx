@@ -6,6 +6,13 @@ sidebar_position: 3
 
 Now we have a PBX to connect to, we can install the card.
 
+:::warning
+
+The card only works in HTTPS. This is required by the browser to send your mic/cam trough.
+You can use something like **Duck DNS** or **Let's Encrypt**.
+
+:::
+
 ## Installation
 
 import Tabs from '@theme/Tabs';
@@ -76,6 +83,12 @@ custom: []
 dtmfs: []
 buttons: []
 ```
+
+:::caution
+
+If your new options doesn't seem to be working, make sure to clear your browser cache and refresh the card. In your browser press **F12**, check **Clear Cache** and press **ctrl + F5** to fully refresh the page.
+
+:::
 
 :::caution
 

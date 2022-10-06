@@ -19,6 +19,7 @@ We recommend using the **card editor** for all other settings.
 type: custom:sipjs-card
 server: 192.168.0.10
 port: '8089'
+prefix: ''
 video: false
 ringtone: /local/asterisk/ringtone.mp3
 button_size: '62'
@@ -77,6 +78,12 @@ iceConfig: # Remove if you don't want to use ICE
 ```
 
 </details>
+
+:::caution
+
+If your new options doesn't seem to be working, make sure to clear your browser cache and refresh the card. In your browser press **F12**, check **Clear Cache** and press **ctrl + F5** to fully refresh the page.
+
+:::
 
 ### Option: `server`
 The address it connects to.
