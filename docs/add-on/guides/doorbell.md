@@ -135,13 +135,13 @@ exten => 888,3,ConfBridge(1,myconferenceroom,admin_user)
 
 Look <a href="https://wiki.asterisk.org/wiki/display/AST/ConfBridge+Configuration">here</a> for all the conference settings.
 
-### Redial loop
+### Redial
 
 This is a bit more complicated dialplan, but basicly it tries to call, and if it hangsup because the endpoint isn't registered it tries again after 1 second. And it keeps trying until it tried 60 times.
 
 Compared to the park method, this way all endpoints keep ringing. Which could be quite useful if you have a ring group. This also makes this method very useful for if you want to call both the sip cards and softphones.
 
-You can tweak the wait time between tries or the amount of tries.
+Feel free to tweak the wait time between tries or the amount of tries. And adjust the Dial function for your endpoints.
 
 ```editorconfig title="extensions.conf"
 exten => s,1,NoOp() 
@@ -161,3 +161,10 @@ exten => s,1,NoOp()
  same => n(exitdialplan),NoOp(Exiting dialplan: HANGUP_CAUSE=${HANGUPCAUSE}) 
  same => n,Hangup()
  ```
+
+A similar function is the **RetryDial** function.
+
+```editorconfig title="extensions.conf"
+exten => 777,1,Progress()
+exten => 777,n,RetryDial(wait.wav,4,10,PJSIP/100) 
+```
