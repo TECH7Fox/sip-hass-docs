@@ -139,6 +139,8 @@ Look <a href="https://wiki.asterisk.org/wiki/display/AST/ConfBridge+Configuratio
 
 This is a bit more complicated dialplan, but basicly it tries to call, and if it hangsup because the endpoint isn't registered it tries again after 1 second. And it keeps trying until it tried 60 times.
 
+When dialing, you can use the asterisk integration to trigger a automation that sends a notification to your phone to open the sip card.
+
 Compared to the park method, this way all endpoints keep ringing. Which could be quite useful if you have a ring group. This also makes this method very useful for if you want to call both the sip cards and softphones.
 
 Feel free to tweak the wait time between tries or the amount of tries. And adjust the Dial function for your endpoints.
@@ -163,6 +165,10 @@ exten => s,1,NoOp()
  ```
 
 A similar function is the **RetryDial** function.
+
+`wait.wav` is the waiting music.
+`4` is the seconds between each try.
+`10` is the amount of tries.
 
 ```editorconfig title="extensions.conf"
 exten => 777,1,Progress()
