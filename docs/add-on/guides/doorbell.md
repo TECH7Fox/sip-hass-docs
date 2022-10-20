@@ -141,6 +141,8 @@ This is a bit more complicated dialplan, but basicly it tries to call, and if it
 
 Compared to the park method, this way all endpoints keep ringing. Which could be quite useful if you have a ring group. This also makes this method very useful for if you want to call both the sip cards and softphones.
 
+You can tweak the wait time between tries or the amount of tries.
+
 ```editorconfig title="extensions.conf"
 exten => s,1,NoOp() 
  same => n,Set(COUNT=1)
