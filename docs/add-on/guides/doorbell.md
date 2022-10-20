@@ -135,21 +135,27 @@ exten => 888,3,ConfBridge(1,myconferenceroom,admin_user)
 
 Look <a href="https://wiki.asterisk.org/wiki/display/AST/ConfBridge+Configuration">here</a> for all the conference settings.
 
-### Redial
+### Redial loop
 
-You can also try to redial until someone registers and picks up.
+This is a bit more complicated dialplan, but basicly it tries to call, and if it hangsup because the endpoint isn't registered it tries again after 1 second. And it keeps trying until it tried 60 times.
 
-:::caution
-
-This option is not ideal as it could give a lot of missed calls.
-
-:::
-
-`wait.wav` is the waiting music.
-`4` is the seconds between each try.
-`10` is the amount of tries.
+Compared to the park method, this way all endpoints keep ringing. Which could be quite useful if you have a ring group. This also makes this method very useful for if you want to call both the sip cards and softphones.
 
 ```editorconfig title="extensions.conf"
-exten => 777,1,Progress()
-exten => 777,n,RetryDial(wait.wav,4,10,PJSIP/100) 
-```
+exten => s,1,NoOp() 
+ same => n,Set(COUNT=1)
+ same => n,While($[ ${COUNT} < 60 ])
+ same => n,Set(DIALGROUP(mygroup,add)=PJSIP/6001) 
+ same => n,Set(DIALGROUP(mygroup,add)=PJSIP/100) 
+ same => n,Dial(${DIALGROUP(mygroup)},60)
+ same => n,Set(HANGUPCAUSEKEYS=${HANGUPCAUSE_KEYS()})
+ same => n,Set(HANGUP_CAUSE=${HANGUPCAUSE})
+ same => n,GotoIf($["${HANGUP_CAUSE}" == "21"]?exitdialplan)
+ same => n,GotoIf($["${HANGUP_CAUSE}" == "0"]?exitdialplan)  
+ same => n,Wait(1) 
+ same => n,SET(COUNT=$[${COUNT} + 1]
+ same => n,EndWhile()
+ same => n,Verbose(2, HANGUP_CAUSE=${HANGUPCAUSE})
+ same => n(exitdialplan),NoOp(Exiting dialplan: HANGUP_CAUSE=${HANGUPCAUSE}) 
+ same => n,Hangup()
+ ```
