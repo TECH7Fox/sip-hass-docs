@@ -137,13 +137,34 @@ Look <a href="https://wiki.asterisk.org/wiki/display/AST/ConfBridge+Configuratio
 
 ### Redial
 
-You can also try to redial until someone registers and picks up.
+This is a bit more complicated dialplan, but basicly it tries to call, and if it hangsup because the endpoint isn't registered it tries again after 1 second. And it keeps trying until it tried 60 times.
 
-:::caution
+When dialing, you can use the asterisk integration to trigger a automation that sends a notification to your phone to open the sip card.
 
-This option is not ideal as it could give a lot of missed calls.
+Compared to the park method, this way all endpoints keep ringing. Which could be quite useful if you have a ring group. This also makes this method very useful for if you want to call both the sip cards and softphones.
 
-:::
+Feel free to tweak the wait time between tries or the amount of tries. And adjust the Dial function for your endpoints.
+
+```editorconfig title="extensions.conf"
+exten => s,1,NoOp() 
+ same => n,Set(COUNT=1)
+ same => n,While($[ ${COUNT} < 60 ])
+ same => n,Set(DIALGROUP(mygroup,add)=PJSIP/6001) 
+ same => n,Set(DIALGROUP(mygroup,add)=PJSIP/100) 
+ same => n,Dial(${DIALGROUP(mygroup)},60)
+ same => n,Set(HANGUPCAUSEKEYS=${HANGUPCAUSE_KEYS()})
+ same => n,Set(HANGUP_CAUSE=${HANGUPCAUSE})
+ same => n,GotoIf($["${HANGUP_CAUSE}" == "21"]?exitdialplan)
+ same => n,GotoIf($["${HANGUP_CAUSE}" == "0"]?exitdialplan)  
+ same => n,Wait(1) 
+ same => n,SET(COUNT=$[${COUNT} + 1]
+ same => n,EndWhile()
+ same => n,Verbose(2, HANGUP_CAUSE=${HANGUPCAUSE})
+ same => n(exitdialplan),NoOp(Exiting dialplan: HANGUP_CAUSE=${HANGUPCAUSE}) 
+ same => n,Hangup()
+ ```
+
+A similar function is the **RetryDial** function.
 
 `wait.wav` is the waiting music.
 `4` is the seconds between each try.
