@@ -17,7 +17,7 @@ To improve battery life you can use a **PUSH message** to wake up and register t
 
 :::caution
 
-Make sure your extension has `quality=yes` set, otherwise **Asterisk** thinks the extension is already online.
+Make sure your asterisk extension in pjsip_custom.conf has `qualify=yes` set, otherwise **Asterisk** thinks the extension is already online.
 
 :::
 
