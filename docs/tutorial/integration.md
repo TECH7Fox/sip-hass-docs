@@ -47,6 +47,6 @@ username: admin
 password: my-password # The password you set in the add-on configuration
 ```
 
-After a couple seconds, click on `devices` and you should see the server, and one or more **PJSIP devices**.
+After a couple seconds, click on `devices` and you should see the server, and the **PJSIP** and **SIP devices**.
 
 That's it! Now you got sensors and services you can use for automations.
