@@ -28,6 +28,20 @@ data:
 
 </details>
 
+<details>
+
+<summary>Hangup Example</summery>
+
+```yaml title="Service options"
+service: asterisk.send_action
+data:
+  action: Hangup
+  parameters:
+    channel: PJSIP/100
+```
+
+</details>
+
 ### Option: `Action`
 Channel name to call.
 
