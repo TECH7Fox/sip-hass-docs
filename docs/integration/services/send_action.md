@@ -30,7 +30,7 @@ data:
 
 <details>
 
-<summary>Hangup Example</summery>
+<summary>Hangup Example</summary>
 
 ```yaml title="Service options"
 service: asterisk.send_action
