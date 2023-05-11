@@ -5,7 +5,7 @@ tags:
     - Send Action Service
 ---
 
-The `send_action` service can be used to send any AMI action
+The `send_action` service can be used to send any AMI action.
 
 ## Settings
 
