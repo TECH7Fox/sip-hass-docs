@@ -9,6 +9,12 @@ The `send_action` service can be used to send any AMI action.
 
 ## Settings
 
+:::warning
+
+Remember that most AMI actions use milliseconds for timing. So if you're Originate call immediately stops, check the timeout.
+
+:::
+
 <details>
 
 <summary>Originate Example</summary>
