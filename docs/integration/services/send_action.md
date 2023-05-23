@@ -23,7 +23,7 @@ data:
     exten: "101"
     priority: "1"
     caller_id: Home Assistant
-    timeout: 60
+    timeout: 60000
 ```
 
 </details>
