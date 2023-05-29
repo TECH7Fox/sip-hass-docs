@@ -39,7 +39,7 @@ data:
     context: speech                             # The context we created in the dialplan
     exten: 123                                  # The extension inside that context
     priority: 1                                 # Priority of the call
-    callerid: 'Home Assistant'                 # The callerID it calls as
+    callerid: 'Home Assistant'                  # The callerID it calls as
     timeout: 60000                              # Time until giving up in ms
     variable: "TEXT='Hello world!',LANG=en"     # Variables that you can use in the dialplan
 ```
