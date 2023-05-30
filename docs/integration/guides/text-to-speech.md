@@ -23,9 +23,9 @@ For this guide you will need the following:
 First, let's make a dialplan extension.
 
 ```editorconfig title="extensions.conf"
-[speech]                                       ; The context
-exten => 123,1,Answer()                        ; Answer the call
-exten => 123,n,agi(googletts.agi,"${TEXT}",en) ; Execute the googletts agi script with the TEXT variable
+[speech]                                              ; The context
+exten => 123,1,Answer()                               ; Answer the call
+exten => 123,n,agi(googletts.agi,"${TEXT}","${LANG}") ; Execute the googletts agi script with the TEXT and LANG variables
 ```
 
 ## Service
@@ -33,13 +33,13 @@ exten => 123,n,agi(googletts.agi,"${TEXT}",en) ; Execute the googletts agi scrip
 ```yaml title="Service"
 service: asterisk.send_action
 data:
-    action: Originate
-    parameters:
-        channel: PJSIP/100            # The device it will call
-        context: speech               # The context we created in the dialplan
-        exten: '123'                  # The extension inside that context
-        priority: '1'                 # Priority of the call
-        caller_id: 'Home Assistant'   # The callerID it calls as
-        timeout: 60                   # Time until giving up
-        variables: TEXT: Hello world! # Variables that you can use in the dialplan
+  action: Originate
+  parameters:
+    channel: PJSIP/100                          # The device it will call
+    context: speech                             # The context we created in the dialplan
+    exten: 123                                  # The extension inside that context
+    priority: 1                                 # Priority of the call
+    callerid: 'Home Assistant'                  # The callerID it calls as
+    timeout: 60000                              # Time until giving up in ms
+    variable: "TEXT='Hello world!',LANG=en"     # Variables that you can use in the dialplan
 ```
