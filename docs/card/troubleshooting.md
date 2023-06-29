@@ -26,3 +26,6 @@ Either the browser can't find your microphone or camera, or you haven't setup SS
 The card tries to loop trough a array that doesn't exist. If you don't use a option like `custom`, `dtmfs` or `buttons` make sure you still configure it.
 
 Example for buttons: `buttons: []`
+
+### NotAllowedError: play() can only be initiated by a user gesture.
+If you get the error `Error starting audio playback: NotAllowedError: play() can only be initiated by a user gesture.` on the companion app, turn on **Autoplay Videos** in the app settings.
