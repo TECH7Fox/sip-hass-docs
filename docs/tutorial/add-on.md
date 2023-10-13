@@ -49,6 +49,6 @@ Now we can start the add-on. After 1-3 minutes you can see the config files for 
 
 :::tip
 
-You can see the generated extensions in `/config/asterisk/pjsip_default.conf`.
+You can check the generated extensions in `/config/asterisk/default/pjsip_default.conf`.
 
 :::
