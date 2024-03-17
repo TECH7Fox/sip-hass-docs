@@ -174,3 +174,15 @@ A similar function is the **RetryDial** function.
 exten => 777,1,Progress()
 exten => 777,n,RetryDial(wait.wav,4,10,PJSIP/100) 
 ```
+
+### Another Redial Example
+
+Here is another redial example that keeps trying until someone answers and hangs up.
+
+```editorconfig title="extensions.conf"
+exten => 8002,1,Ringing() ; ghost extension number used only for the purpose of redirect, there is no trunk in sip/psjip.conf , this is setup on your VTO config.
+exten => 8002,n(dialing),Dial(${PJSIP_DIAL_CONTACTS(100)}& ${PJSIP_DIAL_CONTACTS(104)}) ;this is so you can dial multiple extensions.
+exten => 8002,n(busy),Playtones(dial) ;the call connects and custom sound is played, but we make it sound the same with the dial ringtone
+exten => 8002,n,Goto(dialing) ; then it repeats itself
+exten => 8002,n,HangUp()
+```
