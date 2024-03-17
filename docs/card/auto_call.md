@@ -7,7 +7,7 @@ The card has a autocall feature, that will call a extension right after it loads
 
 ## Usage
 
-Add `?call=<number>` to your **URL**.
+Add `?call=<number>` to your **https://my-ha.duckdns.org/phone-lovelace?call=555**.
 
 Example: 
 ```
