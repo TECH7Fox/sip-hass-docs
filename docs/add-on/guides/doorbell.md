@@ -175,7 +175,7 @@ exten => 777,1,Progress()
 exten => 777,n,RetryDial(wait.wav,4,10,PJSIP/100) 
 ```
 
-### Another Redial Example
+### Redial Until Answer
 
 Here is another redial example that keeps trying until someone answers and hangs up.
 
@@ -186,3 +186,8 @@ exten => 8002,n(busy),Playtones(dial) ;the call connects and custom sound is pla
 exten => 8002,n,Goto(dialing) ; then it repeats itself
 exten => 8002,n,HangUp()
 ```
+
+So when somebody pushes the doorbell but none of the dashboard are connected, it will keep dialing untill someone answers.
+Like this you can open the home assistant after a notification and see the incoming call on multiple dashboards, first come, first served.
+
+You cannot close the connection unless you answer the call and then hangup.
