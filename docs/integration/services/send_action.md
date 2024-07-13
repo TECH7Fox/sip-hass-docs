@@ -28,7 +28,7 @@ data:
     context: default
     exten: "101"
     priority: "1"
-    caller_id: Home Assistant
+    callerid: Home Assistant
     timeout: 60000
 ```
 
