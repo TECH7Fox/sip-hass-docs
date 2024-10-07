@@ -42,8 +42,10 @@ The repository contains a `docker-compose.yml` file that can be used to locally 
 
 - Copy the example `json` configuration file and set your own values:
   ```bash
-   cp asterisk/config.json.example asterisk/config.json
+  mkdir config
+  cp ./rootfs/etc/asterisk-addon/default_config.json asterisk/config.json
   ```
+- Set `HA_TOKEN` and `HA_URL` environment variables in docker-compose.yml
 - Build a Docker image:
   ```bash
   docker-compose build asterisk
