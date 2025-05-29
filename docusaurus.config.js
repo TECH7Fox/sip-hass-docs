@@ -21,6 +21,31 @@ const config = {
     [require.resolve("@easyops-cn/docusaurus-search-local"),
       {hashed: true}
     ],
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        entryPoints: ['./sip-hass-card/src/sip-core.ts'],
+        tsconfig: './sip-hass-card/src/tsconfig.json',
+        groupOrder: ["Classes", "Interfaces", "Enums"],
+        sidebar: { pretty: true },
+        textContentMappings: {
+          "title.indexPage": "SIP Core API",
+          "title.memberPage": "{name}",
+        },
+        parametersFormat: "table",
+        interfacePropertiesFormat: "table",
+        propertyMembersFormat: "table",
+        indexFormat: "list",
+        typeDeclarationFormat: "table",
+        enumMembersFormat: "table",
+        classPropertiesFormat: "table",
+        tableColumnSettings: {
+          hideDefaults: true,
+          hideModifiers: true,
+        },
+        useCodeBlocks: true,
+      },
+    ],
   ],
 
   presets: [
@@ -77,6 +102,12 @@ const config = {
             docId: 'card/introduction',
             position: 'left',
             label: 'Card',
+          },
+          {
+            type: 'doc',
+            docId: 'api/index',
+            position: 'left',
+            label: 'SIP Core API',
           },
           {
             type: 'doc',
