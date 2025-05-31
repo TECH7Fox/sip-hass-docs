@@ -57,14 +57,14 @@ overhead and complexity that not only is impossible to maintain
 for a container, but also has multiple bugs that make it unusable
 for this project.
 
-See the [Asterisk Add-on](/developers/add-on.md) section for more information.
+See the [Asterisk Add-on](/docs/developers/add-on/introduction) section for more information.
 
 ## SIP Core
 
 SIP Core is the main component that handles all call management
 and communication to Asterisk. It provides an API for cards and other elements to use.
 
-See the [SIP Core](/developers/card/introduction.md) section for more information.
+See the [SIP Core](/docs/developers/card/introduction) section for more information.
 
 ## Asterisk Integration
 
@@ -72,4 +72,4 @@ The Asterisk integration is a custom component that connects to the Asterisk Man
 
 This integration is optional and not required to use the SIP Core or cards, but it provides additional functionality and integration with Home Assistant.
 
-See the [Asterisk Integration](/developers/integration/integration.md) section for more information.
+See the [Asterisk Integration](/docs/developers/integration.md) section for more information.
