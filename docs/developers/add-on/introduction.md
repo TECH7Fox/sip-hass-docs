@@ -1,16 +1,34 @@
 ---
-sidebar_position: 2
-title: Add-on
+sidebar_position: 1
 tags:
     - Asterisk
     - PBX
+    - Add-on
 ---
+
+# Introduction
 
 Here is everything you need to setup developing for the add-on.
 
-## About
+## Architecture
 
 The Asterisk add-on is a docker container for Home Assistant that set's up a Asterisk server and configures it to use with the card.
+
+It does some extra things besides just running Asterisk.
+
+- Ingress setup
+- Preconfigured WebRTC endpoints
+- Preconfigured AMI user
+- Preinstalled modules like google tts
+- And more...
+
+```mermaid
+flowchart TD
+    A[Asterisk Add-on] <-->|"Websocket (ingress)"| B[SIP Core]
+    A <-->|WebRTC| B
+    A <-->|AMI| C[Asterisk Integration]
+    A -->|API| D[Home Assistant]
+```
 
 ## How to Test
 

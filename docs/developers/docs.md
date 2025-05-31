@@ -6,7 +6,7 @@ tags:
     - Docs
 ---
 
-Want to contribute to the central **HASS-SIP docs**? That's great! Thank you for your help!
+Want to contribute to the central **HASS-SIP docs**?
 
 Here is everything you should know if you want to create or change pages here.
 

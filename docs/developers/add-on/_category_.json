@@ -1,0 +1,8 @@
+{
+  "label": "Asterisk Add-on Development",
+  "position": 4,
+  "link": {
+    "type": "doc",
+    "id": "developers/add-on/introduction"
+  }
+}

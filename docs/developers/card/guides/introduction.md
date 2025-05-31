@@ -4,6 +4,12 @@ title: Guides
 ---
 
 Guides for developing custom components for SIP Core.
+These guides have been tested on Firefox.
+
+:::info
+These guides will not go into detail on how to setup typescript, webpack,
+or other tools since that is outside the scope of this documentation.
+:::
 
 If you run into any issues or have questions,
 please post them in the [Discord server](https://discordapp.com/invite/qxnDtHbwuD)

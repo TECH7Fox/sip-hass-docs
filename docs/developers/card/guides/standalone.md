@@ -17,7 +17,7 @@ Create a new file named `sip-example-card.js` in your project directory. This fi
 This example shows how to create a standalone card that can be used in Home Assistant. It includes basic functionality to interact with the SIP Core instance.
 
 ```js
-import { LitElement, html, css } from "https://esm.run/lit-html@1";
+import { LitElement, html, css } from "https://cdn.jsdelivr.net/npm/lit-element@4.2.0/+esm";
 
 
 class ExampleCard extends LitElement {
@@ -113,7 +113,12 @@ type: "custom:sip-example-card"
 ```
 
 Now you should see your custom card in your dashboard, which can interact with the SIP Core instance.
-To debug issues, you can open the browser console (F12) and check for any errors or logs from your card.
+
+![working custom card](image-1.png)
+
+:::warning
+If it is not working for you, check the browser console (F12) for any errors, and make sure it reloaded correctly. You can also try reloading the page with `Shift+Ctrl+R` to force a full reload of HA.
+:::
 
 To share your card with others, you can upload it to a Github repository and use [HACS](https://www.hacs.xyz/docs/publish/plugin/) to make it available for others to install and update easily.
 

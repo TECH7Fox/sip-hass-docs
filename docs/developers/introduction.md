@@ -5,7 +5,17 @@ tags:
     - Developers
 ---
 
-# Wide Architecture
+# Introduction
+
+The developers section is for people who want to
+- work on the add-on, integration or SIP Core.
+- create custom cards or popups for SIP Core.
+- simply want to learn more about how the SIP-HASS projects works.
+
+For information on how to install, configure and use the SIP-HASS projects,
+please see the user documentations.
+
+## Wide Architecture
 
 This section explains the entire architecture of all SIP-HASS components and how they work together.
 
@@ -25,15 +35,14 @@ flowchart TD
     end
 
     subgraph supervisor [Supervisor / External]
-        G["Asterisk (Add-on)"] <--> |"Websocket (ingress)"| A
+        G["Asterisk (Add-on)"] --> |"API"| H[Supervisor]
+        G <--> |"Websocket (ingress)"| A
         G <--> |"WebRTC"| A
     end
 
     subgraph ha-backend [HA Backend]
-        H[Asterisk Integration] <--> |AMI| G
+        I[Asterisk Integration] <--> |AMI| G
     end
-
-    supervisor ~~~ ha-backend
 ```
 
 ## Asterisk
