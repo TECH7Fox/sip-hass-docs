@@ -170,11 +170,11 @@ const config = {
             items: [
               {
                 label: 'Add-on',
-                to: '/docs/developers/add-on'
+                to: '/docs/developers/add-on/introduction'
               },
               {
                 label: 'Card',
-                to: '/docs/developers/card'
+                to: '/docs/developers/card/introduction'
               },
               {
                 label: 'Integration',

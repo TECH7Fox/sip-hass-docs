@@ -5,7 +5,7 @@
 This guide will help you create a standalone card that can be used in Home Assistant. This card will interact with the SIP Core instance and provide basic functionality such as answering calls, ending calls, and starting calls to specific extensions.
 
 :::warning
-For this guide we expect you to have **sip-hass-card** already installed, configured and running in your Home Assistant instance. If you haven't done that yet, please refer to the [Installation Guide](../installation.md) to set it up.
+For this guide we expect you to have **sip-hass-card** already installed, configured and running in your Home Assistant instance. If you haven't done that yet, please refer to the [Installation Guide](/tutorial/introduction.md) to set it up.
 :::
 
 ## Step 1: Create the Card
