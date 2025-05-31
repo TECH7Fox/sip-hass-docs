@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksip_hass_docs=self.webpackChunksip_hass_docs||[]).push([[852],{7082:s=>{s.exports=JSON.parse('{"authors":[{"name":"Jordy Kuhne","title":"Maintainer","url":"https://github.com/TECH7Fox","email":"jordy.kuhne@gmail.com","imageURL":"https://github.com/TECH7Fox.png","key":"jordy","page":null,"count":1}]}')}}]);

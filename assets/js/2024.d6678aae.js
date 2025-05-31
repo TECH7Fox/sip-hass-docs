@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksip_hass_docs=self.webpackChunksip_hass_docs||[]).push([[2024],{2024:(s,e,c)=>{c.d(e,{createArchitectureServices:()=>a.S});var a=c(8815);c(3579)}}]);

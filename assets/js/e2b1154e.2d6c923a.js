@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunksip_hass_docs=self.webpackChunksip_hass_docs||[]).push([[2507],{1304:function(s){s.exports=JSON.parse('{"permalink":"/sip-hass-docs/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
