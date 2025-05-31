@@ -8,8 +8,6 @@ tags:
 
 Here is everything you should know to help development with the integration.
 
-Thank you very much for your help!
-
 ## About
 
 The Asterisk integration is a custom component that connect's to the **AMI** (Asterisk Manager Interface) to get the status of the server and SIP endpoints and makes sensors for it.

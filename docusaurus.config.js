@@ -16,7 +16,10 @@ const config = {
   organizationName: 'TECH7Fox',
   projectName: 'sip-hass-docs.github.io',
   trailingSlash: false,
-
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
   plugins: [
     [require.resolve("@easyops-cn/docusaurus-search-local"),
       {hashed: true}
@@ -25,6 +28,10 @@ const config = {
       'docusaurus-plugin-typedoc',
       {
         entryPoints: ['./sip-hass-card/src/sip-core.ts'],
+        excludeExternals: false,
+        out: "docs/developers/card/api",
+        readme: "none",
+        mergeReadme: true,
         tsconfig: './sip-hass-card/src/tsconfig.json',
         groupOrder: ["Classes", "Interfaces", "Enums"],
         sidebar: { pretty: true },
@@ -35,7 +42,7 @@ const config = {
         parametersFormat: "table",
         interfacePropertiesFormat: "table",
         propertyMembersFormat: "table",
-        indexFormat: "list",
+        indexFormat: "table",
         typeDeclarationFormat: "table",
         enumMembersFormat: "table",
         classPropertiesFormat: "table",
@@ -102,12 +109,6 @@ const config = {
             docId: 'card/introduction',
             position: 'left',
             label: 'Card',
-          },
-          {
-            type: 'doc',
-            docId: 'api/index',
-            position: 'left',
-            label: 'SIP Core API',
           },
           {
             type: 'doc',

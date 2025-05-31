@@ -1,0 +1,8 @@
+{
+  "label": "Guides",
+  "position": 5,
+  "link": {
+    "type": "doc",
+    "id": "developers/card/guides/introduction"
+  }
+}

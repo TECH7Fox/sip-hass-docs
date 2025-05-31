@@ -6,7 +6,7 @@ tags:
     - PBX
 ---
 
-Here is everything you need to setup developing for the add-on. Thank you for your help with this project!
+Here is everything you need to setup developing for the add-on.
 
 ## About
 

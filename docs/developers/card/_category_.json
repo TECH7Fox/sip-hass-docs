@@ -1,0 +1,8 @@
+{
+  "label": "SIP Core Development",
+  "position": 5,
+  "link": {
+    "type": "doc",
+    "id": "developers/card/introduction"
+  }
+}
