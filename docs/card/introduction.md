@@ -1,9 +1,10 @@
 ---
 sidebar_position: 1
-title: Introduction
 ---
 
-The SIP Card allows you to connect to a PBX server with **WSS** (WebSocket Secure) and call via the **SIP protocol**.
+# SIP HASS Cards
+
+
 
 ## Goal
 
