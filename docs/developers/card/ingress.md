@@ -31,3 +31,5 @@ wss://homeassistant.local/api/hassio_ingress/1234567890abcdef/ws
 > This method is borrowed from **lovelylain**'s
 > [ha-addon-iframe-card](https://github.com/lovelylain/ha-addon-iframe-card/blob/main/src/hassio-ingress.ts),\
 > and implemented by **mrk-its** in [PR 131](https://github.com/TECH7Fox/sip-hass-card/pull/131).
+
+For more information on how the Asterisk add-on sets up ingress, see the [Add-on documentation](../add-on/ingress.md).

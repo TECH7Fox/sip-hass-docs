@@ -41,7 +41,7 @@ For detailed information on the SIP Core API with all available methods, propert
 
 ## Contributing
 
-PRs and contributions for SIP Core and even wide-use cards / popups are always welcome!
+PRs and contributions to the [repository](https://github.com/TECH7Fox/sip-hass-card) for SIP Core and even wide-use cards / popups are always welcome!
 
 If there are a lot of popular custom cards or popups,
 I might create a seperate community repository for them so people can easily

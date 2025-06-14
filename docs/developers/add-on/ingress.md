@@ -5,7 +5,7 @@ tags:
 
 # Ingress
 
-The Asterisk add-on uses the Home Assistant Ingress feature to provide a web interface for managing the Asterisk server and its settings.
+The Asterisk add-on uses the Home Assistant Ingress feature to tunnel the Websocket connection to Asterisk through the existing Home Assistant connection.
 This allows SIP Core to communicate with Asterisk without needing to port forward or setup SSL in Asterisk itself.
 
 ## Technical Setup

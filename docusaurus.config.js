@@ -64,10 +64,6 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/TECH7Fox/sip-hass-docs/edit/main/',
         },
-        blog: {
-          showReadingTime: true,
-          editUrl: 'https://github.com/TECH7Fox/sip-hass-docs/edit/main/',
-        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -127,11 +123,6 @@ const config = {
             docId: 'showcase/introduction',
             position: 'left',
             label: 'Showcase',
-          },
-          {
-            to: '/blog',
-            label: 'Blog',
-            position: 'right'
           },
           {
             href: 'https://github.com/TECH7Fox/sip-hass-docs',
@@ -223,10 +214,6 @@ const config = {
           {
             title: 'More',
             items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/TECH7Fox/sip-hass-docs',
