@@ -2,11 +2,12 @@
 sidebar_position: 4
 ---
 
-# Integration
+# Integration (optional)
 
 :::info
 
-The integration is optional, and is not required for the card or add-on.
+The integration is optional, and is not required for the card or add-on.  
+If you don't want to use it, you can skip this section for now.
 
 :::
 

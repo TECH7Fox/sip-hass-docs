@@ -4,14 +4,16 @@ sidebar_position: 1
 
 # Asterisk Add-on
 
-<div style={{display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1em", marginBottom: "1em"}}>
+<div style={{display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5em", marginBottom: "1em"}}>
   <div style={{flex: 1}}>
-    The <b>Asterisk Add-on</b> is a lightweight PBX server designed to work out-of-the-box with the SIP HASS Card and Home Assistant. It comes preconfigured for secure WebRTC calling and can automatically generate SIP extensions for your Home Assistant users.
+    The <b>Asterisk Add-on</b> is a lightweight PBX server designed to work out-of-the-box with the SIP HASS Card and Home Assistant.
+    It comes preconfigured for secure WebRTC calling and can automatically generate SIP extensions for your Home Assistant users.
+    
+    This add-on handles all SIP device registration, call routing, and media handling. It also includes additional features like Google Text-to-Speech.
   </div>
-  <img src={require('@site/static/img/asterisk_logo.png').default} className="asterisk-logo" alt="Asterisk Icon" height="100"/>
+  <img src={require('@site/static/img/asterisk_logo.png').default} className="asterisk-logo" alt="Asterisk Icon" height="120"/>
 </div>
 
-This add-on handles all SIP device registration, call routing, and media handling. It also includes additional features like Google Text-to-Speech.
 
 
 ## Goal
@@ -23,10 +25,9 @@ The add-on aims to make setting up a SIP PBX for Home Assistant as easy and fast
 
 - ⚡ **Preconfigured** for SIP HASS Card and Home Assistant
 - 👤 **Automatic generation** of PJSIP extensions for each person entity
-- 🔒 **Secure WebSocket (WSS)** support via Home Assistant **Ingress** (no port forwarding needed)
+- 🔒 **Ingress support** for the websocket connection without the need for SSL or port forwarding
 - 🗣️ **Built-in Google TTS** module
-- 🛡️ Option to use your own SSL certificates or generate self-signed ones when not using Ingress
-- 🛠️ Fully configurable via the add-on settings and config files
+- 🛠️ **Fully configurable** via the add-on settings and config files
 
 
 ## Installation

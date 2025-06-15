@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# 🛠️ SIP Core Settings
+# ⚙️ SIP Core Settings
 
 Here are all the options for SIP Core. The configuration file is located
 at `/config/www/sip-config.json` in your Home Assistant instance.
@@ -19,7 +19,7 @@ WSS port instead of using the Ingress feature until we have found a secure locat
 
 :::caution
 
-If your new options doesn't seem to be working, make sure to fully reload your browser with `ctrl + shift + R`.
+If your new options doesn't seem to be working, make sure to fully reload your browser with <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>.
 
 :::
 

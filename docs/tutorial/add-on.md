@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Add-on
+# Asterisk Add-on
 
 The Asterisk add-on is a PBX server that will handle the SIP devices and calls. It is made for the card and comes preconfigured.
 
@@ -10,9 +10,9 @@ The Asterisk add-on is a PBX server that will handle the SIP devices and calls. 
 
 First install the add-on repository.
 
-- Go to the **Add-on Store**.
-- Click on the three dots, and click on **Repositories**.
-- Add the url: `https://github.com/TECH7Fox/asterisk-hass-addons`
+- Go to the **Add-on Store**. Settings > Add-ons > Add-on Store.
+- Click on the three dots in the upper right corner and select **Repositories**.
+- Enter the url: [`https://github.com/TECH7Fox/asterisk-hass-addons`](https://github.com/TECH7Fox/asterisk-hass-addons) and click **Add**.
 
 Now the add-on should show up under **Asterisk Add-on**.
 
@@ -28,8 +28,8 @@ Set a secure password for the AMI and generated extensions. We will need these l
 ```yaml title="add-on configuration"
 ami_password: my-secret-password    # Set a secure password
 auto_add_secret: my-secret-password # Set a secure password
-video_support: false                # Leave of for now
-auto_add: true                      # Generate a PJSIP extension for every person entity
+video_support: false                # Highly experimental, leave this off for this tutorial
+auto_add: true                      # Generate a preconfigured PJSIP extension for every person entity
 generate_ssl_cert: false            # Enable this if you don't use something like duckdns
 certfile: fullchain.pem
 keyfile: privkey.pem
@@ -47,8 +47,19 @@ mailbox_google_api_key: my-google-stt-key
 
 Now we can start the add-on. After 1-3 minutes you can see the config files for Asterisk.
 
+:::warning
+
+The add-on uses ingress to tunnel the WebSocket connection to the card without the need for SSL or port forwarding.
+The `OPEN WEB UI` button will show a empty page, which is expected.
+
+:::
+
+## Understanding the Configuration
+
+If you want to change Asterisk's settings, it's important to know how the add-on handles the configuration files.
+Please read the [add-on documentation](../add-on/asterisk-settings.md) for more information.
 :::tip
 
-You can check the generated extensions in `/config/asterisk/default/pjsip_default.conf`.
+You can check the generated extensions in `/addon_configs/3e533915_asterisk/asterisk/default/pjsip_default.conf`.
 
 :::

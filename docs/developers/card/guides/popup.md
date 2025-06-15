@@ -261,12 +261,12 @@ This tells SIP Core to use your custom popup component instead of the default on
 
 Also, SIP Core tries to put the `popup_config` object in your component `config` property, so you can access it in your popup. In this example, we added a `test_value` property to demonstrate how to use it.
 
-Now after saving the configuration and reloading with `Shift+Ctrl+R`, you should be able to see your custom popup in action when you click on the call button in the toolbar or when a call is received.
+Now after saving the configuration and reloading with <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>, you should be able to see your custom popup in action when you click on the call button in the toolbar or when a call is received.
 
 ![working custom popup](image.png)
 
 :::warning
-If it is not working for you, check the browser console (F12) for any errors, and make sure it reloaded correctly. You can also try reloading the page with `Shift+Ctrl+R` to force a full reload of HA.
+If it is not working for you, check the browser console (F12) for any errors, and make sure it reloaded correctly. You can also try reloading the page with <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> to force a full reload of HA.
 :::
 
 To share your popup with others, you can upload it to a Github repository and use [HACS](https://www.hacs.xyz/docs/publish/plugin/) to make it available for others to install and update easily.

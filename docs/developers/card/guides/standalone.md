@@ -117,7 +117,7 @@ Now you should see your custom card in your dashboard, which can interact with t
 ![working custom card](image-1.png)
 
 :::warning
-If it is not working for you, check the browser console (F12) for any errors, and make sure it reloaded correctly. You can also try reloading the page with `Shift+Ctrl+R` to force a full reload of HA.
+If it is not working for you, check the browser console (F12) for any errors, and make sure it reloaded correctly. You can also try reloading the page with <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> to force a full reload of HA.
 :::
 
 To share your card with others, you can upload it to a Github repository and use [HACS](https://www.hacs.xyz/docs/publish/plugin/) to make it available for others to install and update easily.

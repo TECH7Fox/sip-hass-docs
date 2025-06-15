@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Introduction
+# Tutorial
 
 In this tutorial we will setup the card, add-on and integration and connect everything together.
 
@@ -11,8 +11,9 @@ In this tutorial we will setup the card, add-on and integration and connect ever
 For the entire SIP-HASS system you'll need:
 
 - Latest Home Assistant:
-  - For the add-on you need **Home Assistant Supervisor**. Otherwise use your own PBX like FreePBX.
-- Person entity for every device you want to call to/with.
-  - You can share a person if you never gonna use them both at once, for example your desktop and phone.
-  - HA Dashboards / 24-7 tablets also need a person.
-  - Make sure you login with that person, and not with a seperate user.
+  - For the add-on you need **Home Assistant Supervisor**. Otherwise use your own Asterisk PBX.
+    - The add-on can also be installed directly on docker. See the [developer documentation](../developers/add-on/docker.md) for more information.
+- HTTPS enabled:
+  - Simplest way is to use the official DuckDNS add-on.
+- HACS installed:
+  - Follow the [HACS installation guide](https://www.hacs.xyz/docs/use/#getting-started-with-hacs) if you don't have it yet.

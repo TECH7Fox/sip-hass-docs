@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# 🛠️ Settings
+# ⚙️ Add-on Settings
 
 Here are the settings of the Asterisk Add-on.
 

@@ -2,14 +2,14 @@
 sidebar_position: 3
 ---
 
-# Card
+# SIP Core & Cards
 
-Now we have a PBX to connect to, we can install the card.
+Now we have a PBX to connect to, we can install the cards.
 
 :::warning
 
-The card only works in HTTPS. This is required by the browser to send your mic/cam trough.
-You can use something like **Duck DNS** or **Let's Encrypt**.
+The card only works in HTTPS. This is required by modern browsers to send your mic/cam trough.
+You can use something like **DuckDNS** or **Let's Encrypt**.
 
 :::
 
@@ -24,116 +24,204 @@ import TabItem from '@theme/TabItem';
       <li>Go to <b>HACS</b></li>
       <li>Click on <b>Frontend</b></li>
       <li>Click on the 3 points in the upper right corner and click on <b>Custom repositories</b></li>
-      <li>Paste <code>https://github.com/TECH7Fox/HA-SIP/</code> into <b>Add custom repository URL</b> and by category choose <b>Lovelace</b></li>
+      <li>Paste <code>https://github.com/TECH7Fox/sip-hass-card</code> into <b>Add custom repository URL</b> and by category choose <b>Lovelace</b></li>
       <li>Click on add and check if the repository is there.</li>
       <li>You should now see <b>SIP Client</b>. Click <b>INSTALL</b></li>
     </ol>
   </TabItem>
   <TabItem value="manual" label="Manual">
     <ol>
-      <li>Go to the latest release on github.</li>
-      <li>Copy <code>sipjs-card.js</code> to <code>/www/</code>.</li>
+      <li>Go to the [latest **stable** release on github](https://github.com/TECH7Fox/sip-hass-card/releases).</li>
+      <li>Copy <code>sipjs-card.js</code> to <code>/config/www/</code>.</li>
       <li>Add <code>sipjs-card.js</code> to resources.</li>
     </ol>
   </TabItem>
 </Tabs>
 
-## Configuration
+## Configure SIP Core
 
-- In edit mode, click on add card.
-- Search for **SIP Card**.
+Now that we have SIP Core installed, we need to configure it.
 
-Now we need to configure it.
+1. In `/config/www/`, create a file called `sip-config.json`.
+2. Copy the settings template from below into it.
 
-:::tip
+<details>
+<summary>Settings Template</summary>
 
-Most things are configurable from the editor, except for the **ICE settings**.
-We recommend using the **card editor** for all other settings.
-
-:::
-
-```yaml title="card configuration"
-type: 'custom:sipjs-card'
-server: 'your-local-ip'                     # Set your local HA IP here!
-prefix: ''                                  # If you have a prefix in your URL you can add it here.
-port: '8089'                                # WSS default is 8089.
-video: false                                # Send and receive video. Can require extra configuration.
-auto_answer: false                          # Auto-answer when called.
-hide_me: false                              # Hide the extension your registered as.
-state_color: true                           # Show the set entity state in the icon.
-custom_title: ''
-ringtone: /local/asterisk/ringtone.mp3      # Optional, this points to /www/asterisk/ringtone.mp3
-ringbacktone: /local/asterisk/backtone.mp3  # Optional, this points to /www/asterisk/backtone.mp3
-button_size: 42
-extensions:                                 # Set here the WSS extensions you can register as.
-  - person: person.person1                  # Your first person entity here
-    name: Person1
-    extension: '100'
-    secret: 'your-auto-generated-secret'    # Set the auto_generated_secret you set in the add-on here!
-    icon: mdi:monitor
-    entity: binary_sensor.sensor1
-    camera: ''
-  - person: person.person2                  # Your second person entity here
-    name: Person2
-    extension: '101'
-    secret: 'your-auto-generated-secret'    # Set the auto_generated_secret you set in the add-on here!
-    icon: mdi:monitor
-    entity: binary_sensor.sensor1
-    camera: ''
-custom: []
-dtmfs: []
-buttons: []
+```json title="Complete SIP Core Configuration"
+{
+    "ice_config": {
+        "iceGatheringTimeout": 1000,
+        "iceCandidatePoolSize": 0,
+        "iceTransportPolicy": "all",
+        "iceServers": [
+            {
+                "urls": ["stun:stun.l.google.com:19302"]
+            }
+        ],
+        "rtcpMuxPolicy": "require"
+    },
+    "backup_user": {
+        "ha_username": "myusername",
+        "extension": "100",
+        "password": "mypassword"
+    },
+    "users": [
+        {
+            "ha_username": "myusername",
+            "extension": "100",
+            "password": "mypassword"
+        }
+    ],
+    "sip_video": false,
+    "auto_answer": false,
+    "popup_config": {
+        "auto_open": true,
+        "large": false,
+        "buttons": [],
+        "extensions": {}
+    }
+}
 ```
 
-:::caution
+</details>
 
-If your new options doesn't seem to be working, make sure to clear your browser cache and refresh the card. In your browser press **F12**, check **Clear Cache** and press **ctrl + F5** to fully refresh the page.
+3. Change `myusername`, `extension` and `mypassword` with your own Home Assistant username, SIP extension, and the password that you set in the add-on settings.
 
-:::
+:::info
 
-:::caution
-
-If you don't use some arrays like `custom`, `dtmfs` or `buttons`, make sure to include the empty arrays as shown in the example above.
-Otherwise you will get a `Cannot reach properties of undefined (reading 'foreach')` error.
+You can find the Home Assistant **usernames** in Settings > People > Users.
 
 :::
 
-Now you might get a `9006` error. That's because the certificate doesn't match the domain. (in this case the server option)
+4. Save the file.
 
-So now we need to fix **SSL**.
+5. Reload your browser (use <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>) to make sure the new configuration is loaded.
+
+6. (Optional) Adjust other options like `auto_answer` or `popup_config` as needed.  
+See the [Settings documentation](../card/settings.md) for all available options and examples.
+
+## Add the Card(s)
+
+Now that SIP Core is configured, you can add cards to your dashboard to make and receive calls.
+
+### 📇 Contacts Card
+
+The **Contacts Card** shows a list of SIP endpoints (extensions) and lets you call them with a single click.
+
+```yaml title="Example: Contacts Card"
+type: custom:sip-contacts-card
+extensions:
+  "102":
+    name: Jordy
+    status_entity: binary_sensor.100_registered
+    override_icon: mdi:account
+  "103":
+    name: Desk phone
+    override_icon: mdi:deskphone
+  "8001":
+    name: Doorbell
+    override_icon: mdi:doorbell-video
+  "0612345678":
+    name: Test
+    override_icon: mdi:dialpad
+    edit: true
+debug: false
+hide_me: false
+state_color: true
+```
+
+See the [Contacts Card documentation](../card/cards-popups/contacts-card.md) for all options and features.
+
+---
+
+### 📞 Call Card (Optional)
+
+The **Call Card** provides a full call interface directly in your dashboard, including call controls, video, and custom buttons.
+
+```yaml title="Example: Call Card"
+type: custom:sip-call-card
+extensions:
+  "101":
+    name: Jordy
+  "102":
+    name: Desk Phone
+    override_icon: mdi:deskphone
+  "8001":
+    name: Doorbell
+    camera_entity: camera.doorbell
+buttons:
+  - label: Open Door
+    icon: mdi:door-open
+    type: service_call
+    data:
+      domain: light
+      service: toggle
+      entity_id: light.bedroom_lights
+  - label: DTMF 1
+    icon: mdi:1
+    type: dtmf
+    data:
+      dtmf: "1"
+```
+
+See the [Call Card documentation](../card/cards-popups/call-card.md) for all options and features.
+
+---
+
+### 🛠️ Custom Cards
+
+You can also create your own custom cards and popups to fit your needs.  
+See the [developer documentation](../developers/card/introduction.md) for guides and examples on building your own SIP Core components.
 
 ## SSL
 
-**WSS** (Secure WebSocket) requires **SSL** for security reason. The add-on set's up Asterisk's part of that, but you still need to setup your network to work with it.
+**WSS** (Secure WebSocket) requires **SSL** for security reasons. The add-on sets up Asterisk's part of that, but you may still need to set up your network to work with it.
 
-### Manual
+<Tabs groupId="ssl-method">
+  <TabItem value="ingress" label="Ingress (Recommended)" default>
+    <b>Ingress</b> is the easiest and most secure way to use SIP Core with the Asterisk add-on.<br/>
+    Home Assistant tunnels the WebSocket connection through its own secure connection, so you don't need to set up SSL or port forwarding in Asterisk.
 
-You can temporary accept the certificate manually by going to `https://<YOUR-HA-ADDRESS>:8089/ws`, click continue and accept. You should see `Upgrade Required`.
+    - No need to open ports or manage certificates.
+    - Works out of the box with the add-on and SIP Core.
+    - Just use the default settings and let Home Assistant and SIP Core handle the rest.
 
-Now your browser accepts this certificate, even if the domain doesn't match.
+    :::tip
+    If you use the Asterisk add-on, Ingress is enabled by default.  
+    For technical details, see the <a href="/docs/developers/add-on/ingress">developer docs</a>.
+    :::
+  </TabItem>
+  <TabItem value="manual" label="Manual">
+    You can temporarily accept the certificate manually by going to:<br/>
+    <code>https://&lt;YOUR-HA-ADDRESS&gt;:8089/ws</code>, click continue and accept. You should see <b>Upgrade Required</b>.
 
-:::warning
+    Now your browser accepts this certificate, even if the domain doesn't match.
 
-Warning! This only works for a couple days max. When the certificate changes you have to do this again.
+    :::warning
+    This is only to temporarily test. This only works for a limited time and doesn't work for other devices.
 
-**This is not a permanent solution!**
+    <b>This is not a permanent solution!</b>
+    :::
+  </TabItem>
+  <TabItem value="dns" label="DNS Rewrite">
+    It's possible to set a <b>DNS rewrite</b> in your router, so your certificate domain points towards your <b>local IP</b>.  
+    This way you don't have to port forward anything, but this only works locally.
 
-:::
+    - Set up a DNS rewrite so your domain resolves to your Home Assistant's local IP.
+    - Your browser will trust the certificate if the domain matches.
 
-### Port Forwarding
+    You can find more info <a href="../add-on/guides/dns_rewrite">here</a>.
+  </TabItem>
+  <TabItem value="portforward" label="Port Forwarding">
+    The classic way is to port forward <code>8089</code>.  
+    Then you can set the <code>server</code> option to your domain.  
+    You may also need to forward the <b>RTP ports</b>, which are by default <code>10000-20000</code>.
 
-Best way is to port forward `8089`. Then you can set the `server` option to your domain. But then you also need to forward the **RTP ports**, which is by default `10000-20000`.
+    :::caution
+    If you do this, make sure you have <b>secure passwords</b> for your extensions! Bots may try to brute-force it.
 
-:::caution
-
-If you do this, make sure you have **secure passwords** for your extensions! Bot's may try to brute-force it.
-
-If that happens often, you could set `8089` to another non-standard port.
-
-:::
-
-### DNS Rewrite
-
-It's possible to set a **DNS rewrite** in your router, so your certificate domain points towards your **local IP**. This way you don't have to port forward anything, but this only works locally.
-
-You can find more info <a href="../add-on/guides/dns_rewrite">here</a>.
+    If that happens often, you could set <code>8089</code> to another non-standard port.
+    :::
+  </TabItem>
+</Tabs>
