@@ -1,11 +1,10 @@
 ---
 sidebar_position: 1
-title: Introduction
 tags:
-    - Developers
+    - developers
 ---
 
-# Introduction
+# Developer Documentation
 
 The developers section is for people who want to
 - work on the add-on, integration or SIP Core.
