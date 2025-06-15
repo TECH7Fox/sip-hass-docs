@@ -19,7 +19,10 @@ const config = {
   markdown: {
     mermaid: true,
   },
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: [
+    '@docusaurus/theme-mermaid',
+    '@saucelabs/theme-github-codeblock',
+  ],
   plugins: [
     [require.resolve("@easyops-cn/docusaurus-search-local"),
       {hashed: true}
@@ -104,7 +107,7 @@ const config = {
             type: 'doc',
             docId: 'card/introduction',
             position: 'left',
-            label: 'Card',
+            label: 'Cards',
           },
           {
             type: 'doc',
@@ -123,6 +126,12 @@ const config = {
             docId: 'showcase/introduction',
             position: 'left',
             label: 'Showcase',
+          },
+          {
+            href: 'https://discordapp.com/invite/qxnDtHbwuD',
+            position: 'right',
+            className: 'header-discord-link',
+            'aria-label': 'Discord community',
           },
           {
             href: 'https://github.com/TECH7Fox/sip-hass-docs',

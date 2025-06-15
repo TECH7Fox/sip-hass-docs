@@ -1,9 +1,12 @@
 ---
 slug: /card/guides
-title: Guides
+tags:
+    - SIP Core
 ---
 
-Guides for the SIP card.
+# Guides
+
+Guides for SIP Core and cards.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
