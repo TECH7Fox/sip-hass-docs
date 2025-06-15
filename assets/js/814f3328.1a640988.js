@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunksip_hass_docs=self.webpackChunksip_hass_docs||[]).push([[7472],{5513:s=>{s.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome","permalink":"/sip-hass-docs/blog/welcome","unlisted":false,"date":"2022-04-05T00:00:00.000Z"}]}')}}]);
