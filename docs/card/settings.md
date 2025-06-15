@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# SIP Core Settings
+# 🛠️ SIP Core Settings
 
 Here are all the options for SIP Core. The configuration file is located
 at `/config/www/sip-config.json` in your Home Assistant instance.
