@@ -44,4 +44,4 @@ For more details, see the [tutorial](../tutorial/integration.md).
 ---
 
 For all configuration options, see the [settings](./settings.md).  
-For technical details, see the [developer documentation](../../developers/integration/introduction.md).
+For technical details, see the [developer documentation](../developers/introduction.md).
