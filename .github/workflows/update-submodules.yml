@@ -1,0 +1,23 @@
+name: Update Submodules
+
+on:
+  repository_dispatch:
+    types: [update-docs]
+
+jobs:
+  update-submodules:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - name: Update git submodules
+        run: |
+          git submodule update --init --recursive --remote -f
+      - name: Commit updated submodules
+        run: |
+          git add .
+          git commit -m "Update submodules"
+          git push origin main
