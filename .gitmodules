@@ -1,3 +1,4 @@
 [submodule "sip-hass-card"]
 	path = sip-hass-card
 	url = https://github.com/TECH7Fox/sip-hass-card
+	branch = main
