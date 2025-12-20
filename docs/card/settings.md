@@ -4,23 +4,11 @@ sidebar_position: 2
 
 # ⚙️ SIP Core Settings
 
-Here are all the options for SIP Core. The configuration file is located
-at `/config/www/sip-config.json` in your Home Assistant instance.
-You can edit this file to change the settings for SIP Core.
+Here are all the options for SIP Core. The configuration can be set in the SIP Core integration settings.
 
-:::danger
-
-The configuration file is currently located at the public `www` folder,
-which is **not secure and can be accessed by anyone.** So while we are working on a more secure solution,
-we recommend **not to use shared passwords.** And not to use the card if you have port forwarded the
-WSS port instead of using the Ingress feature until we have found a secure location for the configuration file.
-
-:::
-
-:::caution
-
-If your new options doesn't seem to be working, make sure to fully reload your browser with <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>.
-
+:::info Settings Reload
+SIP Core checks if the settings changed on each window location change and restarts the SIP connection if needed.
+So you can change the settings and just navigate to another page to apply them.
 :::
 
 ## SIP Core Options
@@ -37,15 +25,6 @@ If your new options doesn't seem to be working, make sure to fully reload your b
 | <a id="sip_video"></a> `sip_video` | `boolean` | **`Experimental`** Whether to use video in SIP calls | `false` |
 | <a id="users"></a> `users` | Array of [`SIP User`](#sip-user-options)'s | A array of SIP users. SIP Core will use the one with your HA username | - |
 
-<details>
-<summary>Full Example</summary>
-
-```json reference title="Complete SIP Core Configuration"
-https://github.com/TECH7Fox/sip-hass-card/blob/main/src/sip-config.json
-```
-
-</details>
-
 ### ICE Configuration Options
 
 | Property | Type | Description | Example |
@@ -55,10 +34,6 @@ https://github.com/TECH7Fox/sip-hass-card/blob/main/src/sip-config.json
 | <a id="iceservers"></a> `iceServers` | `RTCIceServer`[] | List of STUN/TURN servers for NAT traversal. | `[{"urls": ["stun:stun.l.google.com:19302"]}]` |
 | <a id="icetransportpolicy"></a> `iceTransportPolicy` | `RTCIceTransportPolicy` | Which ICE candidates to use: `"all"` (default) or `"relay"` (TURN only). | `"all"` |
 | <a id="rtcpmuxpolicy"></a> `rtcpMuxPolicy` | `"require"` | Require RTP/RTCP multiplexing. Should always be `"require"`. | `"require"` |
-
-```json reference title="ICE Configuration Example"
-https://github.com/TECH7Fox/sip-hass-card/blob/main/src/sip-config.json#L2-L12
-```
 
 For more information, see the [MDN Web Docs on RTCConfiguration](https://developer.mozilla.org/en-US/docs/Web/API/RTCConfiguration).
 
@@ -70,7 +45,3 @@ For more information, see the [MDN Web Docs on RTCConfiguration](https://develop
 | <a id="extension"></a> `extension` | `string` | The SIP extension of the user. Will use the HA username if not set | `100` |
 | <a id="ha_username"></a> `ha_username` | `string` | The Home Assistant username of the user | `jordy` |
 | <a id="password"></a> `password` | `string` | The SIP password of the user | `mypassword` |
-
-```json reference title="SIP User Example"
-https://github.com/TECH7Fox/sip-hass-card/blob/main/src/sip-config.json#L19-L23
-```

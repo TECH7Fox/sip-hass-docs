@@ -36,6 +36,10 @@ const config = {
         readme: "none",
         mergeReadme: true,
         tsconfig: './sip-hass-card/src/tsconfig.json',
+        skipErrorChecking: true,
+        compilerOptions: {
+          skipLibCheck: true
+        },
         groupOrder: ["Classes", "Interfaces", "Enums"],
         sidebar: { pretty: true },
         textContentMappings: {
@@ -107,13 +111,13 @@ const config = {
             type: 'doc',
             docId: 'card/introduction',
             position: 'left',
-            label: 'Cards',
+            label: 'SIP Core',
           },
           {
             type: 'doc',
             docId: 'integration/introduction',
             position: 'left',
-            label: 'Integration',
+            label: 'Asterisk Integration',
           },
           {
             type: 'doc',

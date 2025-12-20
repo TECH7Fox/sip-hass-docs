@@ -4,12 +4,12 @@ sidebar_position: 3
 
 # SIP Core & Cards
 
-Now we have a PBX to connect to, we can install the cards.
+Now we have a PBX to connect to, we can install SIP Core and the cards.
 
 :::warning
 
-The card only works in HTTPS. This is required by modern browsers to send your mic/cam trough.
-You can use something like **DuckDNS** or **Let's Encrypt**.
+SIP Core only works over HTTPS. This is required by modern browsers to access your microphone and camera.
+You can use something like **DuckDNS** or **Let's Encrypt** to enable HTTPS for your Home Assistant instance.
 
 :::
 
@@ -20,86 +20,56 @@ import TabItem from '@theme/TabItem';
 
 <Tabs groupId="install-method">
   <TabItem value="hacs" label="HACS" default>
+
+:::info Quick Install
+You can also click the badge to directly add SIP Core to HACS!
+
+[![HACS Repository](https://img.shields.io/badge/HACS_Repository-%2341BDF5.svg?style=for-the-badge&logo=homeassistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=TECH7Fox&repository=sipcore-hass-integration&category=integration)
+:::
+
     <ol>
-      <li>Go to <b>HACS</b></li>
-      <li>Click on <b>Frontend</b></li>
-      <li>Click on the 3 points in the upper right corner and click on <b>Custom repositories</b></li>
-      <li>Paste <code>https://github.com/TECH7Fox/sip-hass-card</code> into <b>Add custom repository URL</b> and by category choose <b>Lovelace</b></li>
-      <li>Click on add and check if the repository is there.</li>
-      <li>You should now see <b>SIP Client</b>. Click <b>INSTALL</b></li>
+      <li>Go to <b>HACS</b> in Home Assistant</li>
+      <li>Click on <b>Integrations</b></li>
+      <li>Click on the three dots in the upper right corner and select <b>Custom repositories</b></li>
+      <li>
+        Add the repository URL:<br/>
+        <code>https://github.com/TECH7Fox/sipcore-hass-integration</code><br/>
+        and set the category to <b>Integration</b>
+      </li>
+      <li>Click <b>Add</b> and verify the repository appears</li>
+      <li>You should now see <b>SIP Core</b>. Click <b>INSTALL</b></li>
+      <li>Restart Home Assistant</li>
+      <li>Go to <b>Settings → Devices & Services → Integrations</b> and click <b>Add Integration</b></li>
+      <li>Search for <b>SIP Core</b> and follow the configuration prompts</li>
     </ol>
   </TabItem>
   <TabItem value="manual" label="Manual">
     <ol>
-      <li>Go to the [latest **stable** release on github](https://github.com/TECH7Fox/sip-hass-card/releases).</li>
-      <li>Copy <code>sipjs-card.js</code> to <code>/config/www/</code>.</li>
-      <li>Add <code>sipjs-card.js</code> to resources.</li>
+      <li>Download the [latest release from GitHub](https://github.com/TECH7Fox/sipcore-hass-integration/releases)</li>
+      <li>Extract the <code>sip_core</code> folder to <code>/config/custom_components/</code></li>
+      <li>Restart Home Assistant</li>
+      <li>Go to <b>Settings → Devices & Services → Integrations</b> and click <b>Add Integration</b></li>
+      <li>Search for <b>SIP Core</b> and follow the configuration prompts</li>
     </ol>
   </TabItem>
 </Tabs>
 
 ## Configure SIP Core
 
-Now that we have SIP Core installed, we need to configure it.
+After installing SIP Core as an integration, you can configure it through the Home Assistant UI.
 
-1. In `/config/www/`, create a file called `sip-config.json`.
-2. Copy the settings template from below into it.
-
-<details>
-<summary>Settings Template</summary>
-
-```json title="Complete SIP Core Configuration"
-{
-    "ice_config": {
-        "iceGatheringTimeout": 1000,
-        "iceCandidatePoolSize": 0,
-        "iceTransportPolicy": "all",
-        "iceServers": [
-            {
-                "urls": ["stun:stun.l.google.com:19302"]
-            }
-        ],
-        "rtcpMuxPolicy": "require"
-    },
-    "backup_user": {
-        "ha_username": "myusername",
-        "extension": "100",
-        "password": "mypassword"
-    },
-    "users": [
-        {
-            "ha_username": "myusername",
-            "extension": "100",
-            "password": "mypassword"
-        }
-    ],
-    "sip_video": false,
-    "auto_answer": false,
-    "popup_config": {
-        "auto_open": true,
-        "large": false,
-        "buttons": [],
-        "extensions": {}
-    }
-}
-```
-
-</details>
-
-3. Change `myusername`, `extension` and `mypassword` with your own Home Assistant username, SIP extension, and the password that you set in the add-on settings.
+1. Go to **Settings → Devices & Services → Integrations**
+2. Find and select the **SIP Core** integration
+3. Click on **configure** and enter your settings accordenly 
+4. Save your configuration
 
 :::info
-
-You can find the Home Assistant **usernames** in Settings > People > Users.
-
+You can find the Home Assistant **usernames** in Settings → People → Users.
 :::
 
-4. Save the file.
+For all available configuration options, see the [Settings documentation](../card/settings.md).
 
-5. Reload your browser (use <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>) to make sure the new configuration is loaded.
-
-6. (Optional) Adjust other options like `auto_answer` or `popup_config` as needed.  
-See the [Settings documentation](../card/settings.md) for all available options and examples.
+---
 
 ## Add the Card(s)
 

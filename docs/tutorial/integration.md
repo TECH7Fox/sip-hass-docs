@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Integration (optional)
+# Asterisk Integration (optional)
 
 :::info
 
@@ -20,6 +20,13 @@ import TabItem from '@theme/TabItem';
 
 <Tabs groupId="install-method">
   <TabItem value="hacs" label="HACS" default>
+
+:::info Quick Install
+You can also click the badge to directly add the Asterisk integration to HACS!
+
+[![HACS Repository](https://img.shields.io/badge/HACS_Repository-%2341BDF5.svg?style=for-the-badge&logo=homeassistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=TECH7Fox&repository=asterisk-hass-integration&category=integration)
+:::
+
     <ol>
       <li>Go to <b>HACS</b></li>
       <li>Click on the 3 points in the upper right corner and click on <code>Custom repositories</code></li>
