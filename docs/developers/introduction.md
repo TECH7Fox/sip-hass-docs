@@ -19,10 +19,10 @@ please see the user documentations.
 This section explains the entire architecture of all SIP-HASS components and how they work together.
 
 This includes:
-- SIP Core
+- SIP Core Integration
 - SIP Cards (Contacts, Call, Popup, third-party)
 - Asterisk Integration
-- Asterisk Add-on
+- Asterisk (Add-on)
 
 ```mermaid
 flowchart TD
@@ -30,7 +30,6 @@ flowchart TD
         A[SIP Core] -->|API| B[Contacts Card]
         A -->|API| C[Popup]
         A -->|API| E[Call Card]
-        D[sip-config.json] -->|Configuration| A
     end
 
     subgraph supervisor [Supervisor / External]
@@ -41,10 +40,12 @@ flowchart TD
 
     subgraph ha-backend [HA Backend]
         I[Asterisk Integration] <--> |AMI| G
+        S[SIP Core Integration] <--> |Configuration| A
+        S <--> |Ingress URL| A
     end
 ```
 
-## Asterisk
+## Asterisk (Add-on)
 
 Asterisk is the PBX that handles the actual calls, SIP endpoints, etc.
 Other PBXes will not work, since Asterisk is currently the only PBX
@@ -58,10 +59,13 @@ for this project.
 
 See the [Asterisk Add-on](/docs/developers/add-on/introduction) section for more information.
 
-## SIP Core
+## SIP Core Integration
 
 SIP Core is the main component that handles all call management
 and communication to Asterisk. It provides an API for cards and other elements to use.
+
+The integration part supports it by managing the configuration and providing a endpoint for it,
+and by providing a endpoint to get the ingress URL from the supervisor.
 
 See the [SIP Core](/docs/developers/card/introduction) section for more information.
 
