@@ -24,12 +24,21 @@ you will need to set up your own port forwarding, SSL, etc.
 
 ```mermaid
 flowchart TD
-    A[SIP Core] -->|API| B[Contacts Card]
-    A -->|API| C[Popup]
-    A -->|API| E[Call Card]
-    D[sip-config.json] -->|Configuration| A
-    F[Asterisk PBX] <--> |"Websocket (ingress)"| A
-    F <--> |"WebRTC"| A
+    subgraph ha-frontend [HA frontend]
+        A[SIP Core] -->|API| B[Contacts Card]
+        A -->|API| C[Popup]
+        A -->|API| E[Call Card]
+    end
+
+    subgraph supervisor [Supervisor / External]
+        F[Asterisk PBX] <--> |"Websocket (ingress)"| A
+        F <--> |"WebRTC"| A
+    end
+
+    subgraph ha-backend [HA Backend]
+        S[SIP Core Integration] <--> |Configuration| A
+        S <--> |Ingress URL| A
+    end
 ```
 
 The SIP Core instance is also mounted on the `window` object, allowing easy access from custom cards and components without needing to import it directly.
