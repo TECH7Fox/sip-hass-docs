@@ -4,7 +4,12 @@ sidebar_position: 2
 
 # Asterisk Add-on
 
-The Asterisk add-on is a PBX server that will handle the SIP devices and calls. It is made for the card and comes preconfigured.
+<div style={{display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5em", marginBottom: "0em"}}>
+  <img src={require('@site/static/img/asterisk_icon.png').default} className="sipcore-logo" alt="SIP Core Logo" height="120"/>
+  <div style={{flex: 1}}>
+    The Asterisk add-on is a PBX server that will handle the SIP devices and calls. It is made for the card and comes preconfigured.
+  </div>
+</div>
 
 ## Add the Repository
 

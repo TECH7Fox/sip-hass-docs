@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'SIP-HASS',
-  tagline: 'SIP for Home Assistant',
+  title: 'SIP-HASS Project',
+  tagline: 'Calls directly in your Home Assistant dashboard',
   url: 'https://sip-hass-docs.github.io',
   baseUrl: '/sip-hass-docs/',
   onBrokenLinks: 'throw',

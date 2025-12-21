@@ -4,11 +4,16 @@ sidebar_position: 1
 
 # SIP Core & Cards
 
-SIP Core brings real-time audio and video calling to your Home Assistant instance through a native integration. The system is made up of several parts that work together to provide a flexible and customizable SIP experience in your smart home.
+<div style={{display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5em", marginBottom: "1em"}}>
+  <div style={{flex: 1}}>
+    <b>SIP Core</b> brings real-time audio and video calling to your Home Assistant instance through a native integration. The system is made up of several parts that work together to provide a flexible and customizable call experience in your smart home.
+  </div>
+  <img src={require('@site/static/img/sipcore_icon.png').default} className="sipcore-logo" alt="SIP Core Logo" height="140"/>
+</div>
 
 ## How It Works
 
-- **SIP Core Integration** is the main engine that handles SIP registration, call management, and device integration. It's a native Home Assistant integration that connects to your PBX (like the Asterisk add-on) using a secure WebSocket connection.
+- **SIP Core Integration** is the main engine that handles SIP registration, call management, and device integration. It's a Home Assistant integration that connects to your PBX (like the Asterisk add-on) using a secure WebSocket connection.
 - **Configuration** is managed through the Home Assistant UI (Settings → Devices & Services). You can configure multiple users, ICE settings, video support, and more.
 - **Ingress** is used by default with the Asterisk add-on, so you don't need to open extra ports or set up SSL on your PBX. If you use your own PBX, you can set a custom WebSocket URL in the integration settings.
 - **Cards** are UI components you add to your dashboards. The Contacts Card and Call Card let you make and receive calls, see status, and interact with other devices.

@@ -4,7 +4,13 @@ sidebar_position: 3
 
 # SIP Core & Cards
 
-Now we have a PBX to connect to, we can install SIP Core and the cards.
+<div style={{display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5em", marginBottom: "0em"}}>
+  <div style={{flex: 1}}>
+    Now we have a PBX to connect to, we can install SIP Core and the cards.
+  </div>
+  <img src={require('@site/static/img/sipcore_icon.png').default} className="sipcore-logo" alt="SIP Core Logo" height="120"/>
+</div>
+
 
 :::warning
 
@@ -75,10 +81,12 @@ For all available configuration options, see the [Settings documentation](../car
 
 Now that SIP Core is configured, you can add cards to your dashboard to make and receive calls.
 
-### 📇 Contacts Card
+### Contacts Card
 
 The **Contacts Card** shows a list of SIP endpoints (extensions) and lets you call them with a single click.
 
+<div style={{display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1em", marginBottom: "0em"}}>
+  <div style={{flex: 1}}>
 ```yaml title="Example: Contacts Card"
 type: custom:sip-contacts-card
 extensions:
@@ -100,15 +108,20 @@ debug: false
 hide_me: false
 state_color: true
 ```
+  </div>
+  <img src={require('@site/static/img/contacts_card.png').default} className="sipcore-logo" alt="SIP Core Logo" height="280"/>
+</div>
 
 See the [Contacts Card documentation](../card/cards-popups/contacts-card.md) for all options and features.
 
 ---
 
-### 📞 Call Card (Optional)
+### Call Card (Optional)
 
 The **Call Card** provides a full call interface directly in your dashboard, including call controls, video, and custom buttons.
 
+<div style={{display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1em", marginBottom: "0em"}}>
+  <div style={{flex: 1}}>
 ```yaml title="Example: Call Card"
 type: custom:sip-call-card
 extensions:
@@ -134,6 +147,9 @@ buttons:
     data:
       dtmf: "1"
 ```
+  </div>
+  <img src={require('@site/static/img/call_card.png').default} className="sipcore-logo" alt="SIP Core Logo" height="230"/>
+</div>
 
 See the [Call Card documentation](../card/cards-popups/call-card.md) for all options and features.
 

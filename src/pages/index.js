@@ -1,4 +1,3 @@
-import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -17,7 +16,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/tutorial/introduction">
-            SIP-HASS Tutorial - 10min ⏱️
+            Tutorial
           </Link>
         </div>
       </div>

@@ -14,11 +14,11 @@ const FeatureList = [
     ),
   },
   {
-    title: 'SIP Card',
-    image: './img/card.png',
+    title: 'SIP Core',
+    image: './img/sipcore_icon.png',
     description: (
       <>
-        The SIP Card allows you to call other dashboards and SIP devices like doorbells, from a Home Assistant dashboard.
+        The SIP Core integration allows you to call other dashboards and SIP devices like doorbells, from a Home Assistant dashboard.
       </>
     ),
   },
