@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Tutorial
 
-In this tutorial we will setup the card, add-on and integration and connect everything together.
+In this tutorial we will setup the add-on, SIP Core integration and Asterisk integration and connect everything together.
 
 ## What you'll need
 

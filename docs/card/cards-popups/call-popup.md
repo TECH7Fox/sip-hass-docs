@@ -5,12 +5,15 @@ tags:
 
 # Call Popup
 
-The call popup displays a call interface for SIP Core in a popup dialog.\
-Since it is loaded by SIP Core directly, it is always loaded. Even when changing views.
+<div style={{display: "flex", alignItems: "center", justifyContent: "space-between", gap: "5em", marginBottom: "0em"}}>
+  <div style={{flex: 1}}>
+    The call popup displays a call interface for SIP Core in a popup dialog.\
+    Since it is loaded by SIP Core directly, it is always loaded. Even when changing views.
 
-The popup also injects a button into the toolbar, allowing you to open the popup from any dashboard.
-
-![call popup](call-popup.png)
+    The popup also injects a button into the toolbar, allowing you to open the popup from any dashboard.
+  </div>
+  <img src={require('@site/static/img/popup.png').default} className="sipcore-logo" alt="SIP Core Logo" height="360"/>
+</div>
 
 ## Features
 
