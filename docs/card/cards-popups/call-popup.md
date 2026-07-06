@@ -43,7 +43,7 @@ You can find more at the [SIP Core Settings](../settings.md) page.
 <summary>Full Example</summary>
 
 ```json reference title="Popup Options Example"
-https://github.com/TECH7Fox/sip-hass-card/blob/main/src/sip-config.json#L32-L62
+https://github.com/TECH7Fox/sipcore-hass-integration/blob/e353de26477e4da16e3b5bdaf939a0d0fa4e4026/custom_components/sip_core/defaults.py#L37-L68
 ```
 
 </details>
@@ -58,7 +58,7 @@ https://github.com/TECH7Fox/sip-hass-card/blob/main/src/sip-config.json#L32-L62
 | `data`   | `any`        | Data for the button (service call or DTMF)   | `{ domain: "switch", service: "toggle", entity_id: "switch.door" }` or `"1"` |
 
 ```json reference title="Button Example"
-https://github.com/TECH7Fox/sip-hass-card/blob/main/src/sip-config.json#L43-L50
+https://github.com/TECH7Fox/sipcore-hass-integration/blob/e353de26477e4da16e3b5bdaf939a0d0fa4e4026/custom_components/sip_core/defaults.py#L48-L57
 ```
 
 ### Extension
@@ -76,5 +76,5 @@ The default camera entities have a delay. You can use [go2rtc](https://www.home-
 :::
 
 ```json reference title="Extension Example"
-https://github.com/TECH7Fox/sip-hass-card/blob/main/src/sip-config.json#L57-L60
+https://github.com/TECH7Fox/sipcore-hass-integration/blob/e353de26477e4da16e3b5bdaf939a0d0fa4e4026/custom_components/sip_core/defaults.py#L63-L66
 ```
