@@ -41,5 +41,8 @@
     "docusaurus-plugin-typedoc": "^1.4.0",
     "typedoc": "^0.28.4",
     "typedoc-plugin-markdown": "^4.6.3"
+  },
+  "overrides": {
+    "shell-quote": "1.9.0"
   }
 }
